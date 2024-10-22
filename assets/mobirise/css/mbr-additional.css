@@ -1572,6 +1572,9 @@ a {
   color: #ffffff;
   text-align: center;
 }
+.cid-tJS9vXDdRK {
+  background-color: #000000;
+}
 .cid-tJS9vXDdRK .mbr-fallback-image.disabled {
   display: none;
 }
@@ -1583,7 +1586,6 @@ a {
   height: 100%;
   position: absolute;
   top: 0;
-  background-image: url("../../../assets/images/whatsapp-image-2024-03-26-at-15.10.51-1-1200x1600.jpeg");
 }
 @media (max-width: 991px) {
   .cid-tJS9vXDdRK .image-wrapper {
