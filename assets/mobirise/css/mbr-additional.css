@@ -853,11 +853,6 @@ a {
     padding-left: 1.5rem;
   }
 }
-@media (min-width: 992px) {
-  .cid-uDfP9iMluz .navbar-nav {
-    padding-left: 1.5rem;
-  }
-}
 .cid-uDfP9iMluz .navbar-logo {
   padding-left: 1rem;
   margin: 0 !important;
@@ -1026,6 +1021,11 @@ a {
 }
 .cid-uDfP9iMluz .navbar.collapsed.opened .dropdown-menu {
   top: 0;
+}
+@media (min-width: 992px) {
+  .cid-uDfP9iMluz .navbar.collapsed.opened:not(.navbar-short) .navbar-collapse {
+    max-height: calc(98.5vh - 5rem);
+  }
 }
 .cid-uDfP9iMluz .navbar.collapsed .dropdown-menu .dropdown-submenu {
   left: 0 !important;
