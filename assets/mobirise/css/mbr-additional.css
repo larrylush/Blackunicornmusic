@@ -1432,7 +1432,7 @@ a {
 }
 .cid-uDioJxnCF0 .card-wrapper {
   overflow: hidden;
-  background: #ffffff;
+  background: #000000;
 }
 .cid-uDioJxnCF0 .text-wrapper {
   padding: 4rem 3rem;
@@ -1470,10 +1470,14 @@ a {
   }
 }
 .cid-uDioJxnCF0 .mbr-section-title {
-  color: #000000;
+  color: #ffffff;
 }
 .cid-uDioJxnCF0 .mbr-text {
   color: #000000;
+}
+.cid-uDioJxnCF0 .mbr-text,
+.cid-uDioJxnCF0 .mbr-section-btn {
+  color: #ffffff;
 }
 .cid-uDgOtYXm3O {
   padding-top: 4rem;
