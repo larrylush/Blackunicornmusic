@@ -1413,15 +1413,15 @@ a {
   text-align: center;
   color: #ffffff;
 }
-.cid-uDioJxnCF0 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  background-image: url("../../../assets/images/black-unicorn-logo-v2-trans.png");
+.cid-uDiuIcsKyf {
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+  background-color: #000000;
 }
-.cid-uDioJxnCF0 .mbr-fallback-image.disabled {
+.cid-uDiuIcsKyf .mbr-fallback-image.disabled {
   display: none;
 }
-.cid-uDioJxnCF0 .mbr-fallback-image {
+.cid-uDiuIcsKyf .mbr-fallback-image {
   display: block;
   background-size: cover;
   background-position: center center;
@@ -1430,54 +1430,35 @@ a {
   position: absolute;
   top: 0;
 }
-.cid-uDioJxnCF0 .card-wrapper {
-  overflow: hidden;
-  background: #000000;
-}
-.cid-uDioJxnCF0 .text-wrapper {
-  padding: 4rem 3rem;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .cid-uDioJxnCF0 .text-wrapper {
-    padding: 2.25rem;
+@media (max-width: 991px) {
+  .cid-uDiuIcsKyf .image-wrapper {
+    margin-bottom: 1rem;
   }
 }
-@media (max-width: 767px) {
-  .cid-uDioJxnCF0 .text-wrapper {
-    padding: 1.5rem;
-  }
-}
-.cid-uDioJxnCF0 .row {
-  align-items: center;
-  margin-right: -1rem;
-  margin-left: -1rem;
-}
-.cid-uDioJxnCF0 .row {
+.cid-uDiuIcsKyf .row {
   flex-direction: row-reverse;
 }
-.cid-uDioJxnCF0 .image-wrapper {
-  padding: 0 1rem;
+.cid-uDiuIcsKyf .row {
+  align-items: center;
 }
-.cid-uDioJxnCF0 img,
-.cid-uDioJxnCF0 .image-wrapper {
-  height: 400px;
-  object-fit: cover;
-}
-@media (max-width: 767px) {
-  .cid-uDioJxnCF0 img,
-  .cid-uDioJxnCF0 .image-wrapper {
-    max-height: 350px;
+@media (max-width: 991px) {
+  .cid-uDiuIcsKyf .image-wrapper {
+    padding: 1rem;
   }
 }
-.cid-uDioJxnCF0 .mbr-section-title {
-  color: #ffffff;
+@media (min-width: 992px) {
+  .cid-uDiuIcsKyf .text-wrapper {
+    padding: 0 2rem;
+  }
 }
-.cid-uDioJxnCF0 .mbr-text {
-  color: #000000;
-}
-.cid-uDioJxnCF0 .mbr-text,
-.cid-uDioJxnCF0 .mbr-section-btn {
+.cid-uDiuIcsKyf .mbr-section-title {
   color: #ffffff;
+  text-align: center;
+}
+.cid-uDiuIcsKyf .mbr-text,
+.cid-uDiuIcsKyf .mbr-section-btn {
+  color: #ffffff;
+  text-align: center;
 }
 .cid-uDgOtYXm3O {
   padding-top: 4rem;
@@ -1532,7 +1513,11 @@ a {
 .cid-uDgL6RXZre {
   padding-top: 4rem;
   padding-bottom: 2rem;
-  background-image: url("../../../assets/images/black-unicorn-logo-v2-trans.png");
+  background-image: url("../../../assets/images/urban-urbex-lostplace-abandoned-preview-728x484.jpg");
+}
+.cid-uDgL6RXZre .mbr-overlay {
+  background: #000000;
+  opacity: 0.7;
 }
 .cid-uDgL6RXZre img,
 .cid-uDgL6RXZre .item-img {
@@ -1599,11 +1584,11 @@ a {
 }
 .cid-uDgL6RXZre .mbr-section-title,
 .cid-uDgL6RXZre .mbr-section-head .mbr-section-btn {
-  color: #000000;
+  color: #ffffff;
 }
 .cid-uDgL6RXZre .mbr-section-subtitle,
 .cid-uDgL6RXZre .mbr-section-head .mbr-section-btn {
-  color: #000000;
+  color: #ffffff;
   text-align: center;
 }
 .cid-uDgYLcP3zc {
