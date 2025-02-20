@@ -1357,11 +1357,7 @@ a {
   display: flex;
   padding-top: 11rem;
   padding-bottom: 5rem;
-  background-image: url("../../../assets/images/20240713-235041.png");
-}
-.cid-uDfR9HGLJH .mbr-overlay {
   background-color: #000000;
-  opacity: 0.8;
 }
 @media (min-width: 768px) {
   .cid-uDfR9HGLJH {
@@ -1420,7 +1416,7 @@ a {
 .cid-uDiuIcsKyf {
   padding-top: 3rem;
   padding-bottom: 0rem;
-  background-color: #000000;
+  background-image: url("../../../assets/images/20240713-235041.png");
 }
 .cid-uDiuIcsKyf .mbr-fallback-image.disabled {
   display: none;
