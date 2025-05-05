@@ -14,8 +14,8 @@
         "warningColor": "#a0e2e1",
         "dangerColor": "#ffea64",
         "mainFont": "Inter Tight",
-        "display1Font": "Bungee",
-        "display1Size": "5",
+        "display1Font": "Montserrat",
+        "display1Size": "4",
         "display2Font": "Digital-Serial-Regular",
         "display2Size": "2.4",
         "display5Font": "Inter Tight",
@@ -25,10 +25,10 @@
         "display4Font": "Inter Tight",
         "display4Size": 1.4,
         "isRoundedImages": true,
-        "isRoundedButtons": true,
+        "isRoundedButtons": false,
         "isLargeButtons": true,
         "isGhostButtonBorder": true,
-        "underlinedLinks": true,
+        "underlinedLinks": false,
         "isAnimatedOnScroll": true,
         "isScrollToTopButton": true
       },
@@ -57,6 +57,11 @@
         "css": "'Bungee', display",
         "name": "Bungee",
         "url": "https://fonts.googleapis.com/css?family=Bungee:400"
+      },
+      {
+        "css": "'Montserrat', sans-serif",
+        "name": "Montserrat",
+        "url": "https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
       }
     ],
     "uniqCompNum": 20,
@@ -933,7 +938,7 @@
           },
           "_name": "image04",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image03\" group=\"Image & Video\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" value=\"1\" step=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" value=\"1\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Caption\" name=\"showText\" checked>\n        <header>Background</header>\n        <input type=\"color\" title=\"Color\" name=\"bgColor\" value=\"#000000\">\n    </mbr-parameters>\n\n    <div class=\"image-block m-auto\">\n        <img src=\"@PROJECT_PATH@/assets/images/peacock-art-demo-idea-copy2-2726x2726.jpeg\" alt=\"pre order now\">\n        <div mbr-if=\"showText\">\n            <p class=\"mbr-text mt-4 pb-4 align-center mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-text\">\n                <a href=\"https://www.paypal.com/ncp/payment/T3JRXX4QJK8GJ\" class=\"text-primary\">PRE ORDER NOW!!!</a></p>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image03\" group=\"Image & Video\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" value=\"1\" step=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" value=\"1\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Caption\" name=\"showText\" checked>\n        <header>Background</header>\n        <input type=\"color\" title=\"Color\" name=\"bgColor\" value=\"#000000\">\n    </mbr-parameters>\n\n    <div class=\"image-block m-auto\">\n        <img src=\"@PROJECT_PATH@/assets/images/presales-2726x2726.jpg\" alt=\"pre order now\">\n        <div mbr-if=\"showText\">\n            <p class=\"mbr-text mt-4 pb-4 align-center mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-text\">\n                <a href=\"https://www.paypal.com/ncp/payment/T3JRXX4QJK8GJ\" class=\"text-primary\">PRE ORDER</a></p>\n        </div>\n    </div>\n</section>",
           "_cid": "uKjkHjxm1q",
           "_anchor": "image04-j",
           "_protectedParams": [],
