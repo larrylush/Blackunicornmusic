@@ -1501,7 +1501,6 @@ a {
 .cid-uDgYLcP3zc {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-image: url("../../../assets/images/truelove90.jpeg");
 }
 .cid-uDgYLcP3zc .mbr-fallback-image.disabled {
   display: none;
@@ -1514,6 +1513,7 @@ a {
   height: 100%;
   position: absolute;
   top: 0;
+  background-image: url("../../../assets/images/background1.jpg");
 }
 .cid-uDgYLcP3zc .image-wrap img {
   width: 100%;
@@ -1716,11 +1716,6 @@ a {
   color: #fa0000;
   text-align: center;
 }
-.cid-uDiuIcsKyf {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #000000;
-}
 .cid-uDiuIcsKyf .mbr-fallback-image.disabled {
   display: none;
 }
@@ -1732,6 +1727,7 @@ a {
   height: 100%;
   position: absolute;
   top: 0;
+  background-image: url("../../../assets/images/background1.jpg");
 }
 @media (max-width: 991px) {
   .cid-uDiuIcsKyf .image-wrapper {
