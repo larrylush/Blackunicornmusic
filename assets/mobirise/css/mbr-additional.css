@@ -21,11 +21,11 @@ body {
 }
 .display-1 {
   font-family: 'Michroma', sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1;
 }
 .display-1 > .mbr-iconfont {
-  font-size: 5rem;
+  font-size: 3.75rem;
 }
 .display-2 {
   font-family: 'Digital-Serial-Regular';
@@ -53,11 +53,11 @@ body {
 }
 .display-7 {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.3;
 }
 .display-7 > .mbr-iconfont {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 }
 /* ---- Fluid typography for mobile devices ---- */
 /* 1.4 - font scale ratio ( bootstrap == 1.42857 ) */
@@ -66,14 +66,14 @@ body {
 /* 0.65 - min scale variable, may vary */
 @media (max-width: 992px) {
   .display-1 {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
   }
 }
 @media (max-width: 768px) {
   .display-1 {
-    font-size: 2.8rem;
-    font-size: calc( 2.05rem + (4 - 2.05) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.1 * (2.05rem + (4 - 2.05) * ((100vw - 20rem) / (48 - 20))));
+    font-size: 2.1rem;
+    font-size: calc( 1.7rem + (3 - 1.7) * ((100vw - 20rem) / (48 - 20)));
+    line-height: calc( 1.1 * (1.7rem + (3 - 1.7) * ((100vw - 20rem) / (48 - 20))));
   }
   .display-2 {
     font-size: 1.6rem;
@@ -91,16 +91,16 @@ body {
     line-height: calc( 1.4 * (1.35rem + (2 - 1.35) * ((100vw - 20rem) / (48 - 20))));
   }
   .display-7 {
-    font-size: 1.12rem;
-    font-size: calc( 1.14rem + (1.4 - 1.14) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.4 * (1.14rem + (1.4 - 1.14) * ((100vw - 20rem) / (48 - 20))));
+    font-size: 0.8rem;
+    font-size: calc( 1rem + (1 - 1) * ((100vw - 20rem) / (48 - 20)));
+    line-height: calc( 1.4 * (1rem + (1 - 1) * ((100vw - 20rem) / (48 - 20))));
   }
 }
 @media (min-width: 992px) and (max-width: 1400px) {
   .display-1 {
-    font-size: 2.8rem;
-    font-size: calc( 2.05rem + (4 - 2.05) * ((100vw - 62rem) / (87 - 62)));
-    line-height: calc( 1.1 * (2.05rem + (4 - 2.05) * ((100vw - 62rem) / (87 - 62))));
+    font-size: 2.1rem;
+    font-size: calc( 1.7rem + (3 - 1.7) * ((100vw - 62rem) / (87 - 62)));
+    line-height: calc( 1.1 * (1.7rem + (3 - 1.7) * ((100vw - 62rem) / (87 - 62))));
   }
   .display-2 {
     font-size: 1.6rem;
@@ -118,9 +118,9 @@ body {
     line-height: calc( 1.4 * (1.35rem + (2 - 1.35) * ((100vw - 62rem) / (87 - 62))));
   }
   .display-7 {
-    font-size: 1.12rem;
-    font-size: calc( 1.14rem + (1.4 - 1.14) * ((100vw - 62rem) / (87 - 62)));
-    line-height: calc( 1.4 * (1.14rem + (1.4 - 1.14) * ((100vw - 62rem) / (87 - 62))));
+    font-size: 0.8rem;
+    font-size: calc( 1rem + (1 - 1) * ((100vw - 62rem) / (87 - 62)));
+    line-height: calc( 1.4 * (1rem + (1 - 1) * ((100vw - 62rem) / (87 - 62))));
   }
 }
 /* Buttons */
@@ -634,12 +634,12 @@ a:hover {
 /* Scroll to top button*/
 .form-control {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.3;
   font-weight: 400;
 }
 .form-control > .mbr-iconfont {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 }
 .form-control:hover,
 .form-control:focus {
@@ -648,12 +648,12 @@ a:hover {
 }
 .form-control:-webkit-input-placeholder {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.3;
   font-weight: 400;
 }
 .form-control:-webkit-input-placeholder > .mbr-iconfont {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 }
 blockquote {
   border-color: #9fe870;
@@ -895,7 +895,7 @@ a {
   position: relative;
   padding: 0.5rem 0.6rem;
   flex-wrap: nowrap;
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: #000000 !important;
   left: 0;
   right: 0;
   -webkit-box-pack: justify;
@@ -938,7 +938,7 @@ a {
   transition: .3s all !important;
   min-width: auto;
   background: #000000;
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: #000000 !important;
   border-radius: 4px !important;
 }
 .cid-uDfP9iMluz .nav-item:focus,
@@ -1266,8 +1266,8 @@ a {
     border-radius: 1.5rem;
     background: #000000;
     opacity: 1;
-    border-color: rgba(0, 0, 0, 0.8) !important;
-    background: rgba(0, 0, 0, 0.8) !important;
+    border-color: #000000 !important;
+    background: #000000 !important;
     backdrop-filter: blur(8px);
     border-radius: 4px !important;
   }
@@ -1500,6 +1500,85 @@ a {
 .cid-uDgOtYXm3O .mbr-section-title DIV {
   text-align: center;
 }
+.cid-uZVehLDTxe {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  background-image: url("../../../assets/images/mbr-1920x1440.jpg");
+}
+.cid-uZVehLDTxe .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-uZVehLDTxe .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-uZVehLDTxe .item-mb {
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .cid-uZVehLDTxe .item-mb {
+    margin-bottom: 0;
+  }
+}
+.cid-uZVehLDTxe .item-wrapper {
+  background: #000000;
+  padding: 2.25rem;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cid-uZVehLDTxe .item-wrapper {
+    padding: 2rem 1.5rem;
+    margin-bottom: 0rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-uZVehLDTxe .item-wrapper {
+    padding: 2rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+.cid-uZVehLDTxe .mbr-iconfont {
+  display: inline-flex;
+  font-size: 3rem;
+  color: #ffeb69;
+  margin-bottom: 1rem;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  background: #393193;
+  height: 80px;
+  border-radius: 50%;
+}
+.cid-uZVehLDTxe .mbr-section-title {
+  color: #ffeb69;
+}
+.cid-uZVehLDTxe .mbr-section-subtitle {
+  color: #ffffff;
+}
+.cid-uZVehLDTxe .card-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.cid-uZVehLDTxe .card-box .item-footer {
+  margin-top: auto;
+}
+.cid-uZVehLDTxe .content-head {
+  max-width: 800px;
+}
+.cid-uZVehLDTxe .card-text {
+  color: #edefeb;
+  text-align: center;
+}
+.cid-uZVehLDTxe .card-title,
+.cid-uZVehLDTxe .iconfont-wrapper {
+  color: #fa0000;
+  text-align: center;
+}
 .cid-uDgL6RXZre {
   padding-top: 4rem;
   padding-bottom: 2rem;
@@ -1583,7 +1662,7 @@ a {
 }
 .cid-uDiuIcsKyf {
   padding-top: 3rem;
-  padding-bottom: 0rem;
+  padding-bottom: 3rem;
   background-color: #000000;
 }
 .cid-uDiuIcsKyf .mbr-fallback-image.disabled {
@@ -1726,4 +1805,7 @@ a {
 }
 .cid-uDh16bcARY .mbr-section-title {
   color: #ffffff;
+}
+.cid-uDh16bcARY .mbr-section-subtitle {
+  color: #7787a5;
 }
