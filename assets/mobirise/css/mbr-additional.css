@@ -1334,9 +1334,13 @@ a {
 }
 .cid-uDfR9HGLJH {
   display: flex;
-  padding-top: 5rem;
+  padding-top: 21rem;
   padding-bottom: 0rem;
+  background-image: url("../../../assets/images/banner-nig-2000x369.png");
+}
+.cid-uDfR9HGLJH .mbr-overlay {
   background-color: #000000;
+  opacity: 0.8;
 }
 @media (min-width: 768px) {
   .cid-uDfR9HGLJH {
@@ -1451,7 +1455,7 @@ a {
   max-width: 800px;
 }
 .cid-uDgOtYXm3O {
-  background-image: url("../../../assets/images/background.jpg");
+  background-image: url("../../../assets/images/pageback-2000x2829.png");
 }
 .cid-uDgOtYXm3O .mbr-fallback-image.disabled {
   display: none;
@@ -1487,12 +1491,12 @@ a {
   }
 }
 .cid-uDgOtYXm3O .mbr-section-title {
-  color: #000000;
+  color: #ffffff;
   text-align: center;
 }
 .cid-uDgOtYXm3O .mbr-text,
 .cid-uDgOtYXm3O .mbr-section-btn {
-  color: #000000;
+  color: #edefeb;
   text-align: center;
 }
 .cid-uDgOtYXm3O .mbr-section-title DIV {
@@ -1555,7 +1559,7 @@ a {
 .cid-uDgL6RXZre {
   padding-top: 4rem;
   padding-bottom: 2rem;
-  background-image: url("../../../assets/images/urban-urbex-lostplace-abandoned-preview-728x484.jpg");
+  background-image: url("../../../assets/images/pageback-2000x2829.png");
 }
 .cid-uDgL6RXZre .mbr-overlay {
   background: #000000;
@@ -1636,7 +1640,7 @@ a {
 .cid-uZVehLDTxe {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-image: url("../../../assets/images/mbr-1920x1440.jpg");
+  background-image: url("../../../assets/images/pageback-2000x2829.png");
 }
 .cid-uZVehLDTxe .mbr-fallback-image.disabled {
   display: none;
@@ -1758,7 +1762,7 @@ a {
 .cid-uDh16bcARY {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #000000;
+  background-image: url("../../../assets/images/pageback-2000x2829.png");
 }
 .cid-uDh16bcARY .mbr-fallback-image.disabled {
   display: none;
