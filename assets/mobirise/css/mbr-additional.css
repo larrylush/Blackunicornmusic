@@ -1354,9 +1354,6 @@ a {
 .cid-v0RvHSY1xz img,
 .cid-v0RvHSY1xz .item-img {
   width: 100%;
-  height: 100%;
-  height: 400px;
-  object-fit: cover;
 }
 .cid-v0RvHSY1xz .item:focus,
 .cid-v0RvHSY1xz span:focus {
