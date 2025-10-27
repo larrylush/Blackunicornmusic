@@ -81,7 +81,7 @@
     "versionPublish": "5.9.25",
     "screenshot": "screenshot.png",
     "imageResize": true,
-    "publishChangesOnly": true,
+    "publishChangesOnly": false,
     "favicon": false,
     "mbrsiteDomain": "zc0h2n9msa",
     "usedWebp": true,
