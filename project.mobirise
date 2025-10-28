@@ -82,7 +82,7 @@
     "versionPublish": "5.9.25",
     "screenshot": "screenshot.png",
     "imageResize": true,
-    "publishChangesOnly": false,
+    "publishChangesOnly": true,
     "favicon": false,
     "mbrsiteDomain": "zc0h2n9msa",
     "usedWebp": true,
@@ -99,7 +99,7 @@
       "settings": {
         "main": true,
         "title": "Black Unicorn Records",
-        "meta_descr": "Black Unicorn Records is an independent label dedicated to music that matters — authentic, genre-defying, and artist-first.\nWe champion musicians who refuse to fit the mold, building fairer pathways outside the streaming system.\nFrom raw recordings to real-world performances, we believe in bringing back the soul of sound — one artist, one listener, one record at a time.",
+        "meta_descr": "Black Unicorn Records. Home to F.L.F. *friends, Lovers & Family, Quietman, Larry Lush is an independent label dedicated to music that matters — authentic, genre-defying, and artist-first.\nWe champion musicians who refuse to fit the mold, building fairer pathways outside the streaming system.\nFrom raw recordings to real-world performances, we believe in bringing back the soul of sound — one artist, one listener, one record at a time.",
         "header_custom": "",
         "footer_custom": "",
         "html_before": "",
