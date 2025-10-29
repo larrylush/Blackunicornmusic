@@ -1706,11 +1706,11 @@ a {
 .cid-InWZSIVfUX .icon-bar {
   z-index: 100002;
   position: fixed;
-  top: 47%;
+  top: 85%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  padding-right: 30px;
+  padding-right: 1px;
 }
 .cid-InWZSIVfUX .icon-bar a {
   display: block;
@@ -1719,13 +1719,13 @@ a {
   transition: all 0.3s ease;
   color: white;
   font-size: 20px;
-  padding-left: 30px;
+  padding-left: 1px;
 }
 .cid-InWZSIVfUX .icon-bar a:hover {
   background-color: #000000;
 }
 .cid-InWZSIVfUX .flag {
-  background: transparent;
+  background: #000000;
 }
 .cid-InWZSIVfUX .content {
   margin-left: 75px;
