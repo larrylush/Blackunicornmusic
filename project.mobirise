@@ -17,7 +17,7 @@
         "display1Font": "Michroma",
         "display1Size": "3",
         "display2Font": "Digital-Serial-Regular",
-        "display2Size": "2",
+        "display2Size": "2.5",
         "display5Font": "Inter Tight",
         "display5Size": 2,
         "display7Font": "Inter Tight",
@@ -972,6 +972,282 @@
         {
           "alias": false,
           "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "& when not (@transp)": {
+                "background": "linear-gradient(@angle * 1deg, @bg-value, @color2)"
+              },
+              "& when (@transp)": {
+                "background": "transparent"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".contenair": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center"
+            },
+            "@keyframes spin": {
+              "from": {
+                "transform": "rotateZ(0)"
+              },
+              "to": {
+                "transform": "rotateZ(1turn)"
+              }
+            },
+            ".green-audio-player": {
+              "width": "(@PlaySize * 1px)",
+              "@media (max-width: (@Breakpoint * 1px))": {
+                "width": "300px"
+              },
+              "min-width": "300px",
+              "height": "56px",
+              "box-shadow": "0 4px 16px 0 rgba(0, 0, 0, 0.07)",
+              "display": "flex !important",
+              "justify-content": "space-between",
+              "align-items": "center",
+              "padding-left": "24px",
+              "padding-right": "24px",
+              "border-radius": "(@PlayRad * 1px)",
+              "user-select": "none",
+              "background-color": "@PlayerCol",
+              "box-sizing": "border-box",
+              "outline": "none"
+            },
+            ".green-audio-player.player-accessible .play-pause-btn:hover, .green-audio-player.player-accessible .controls:hover, .green-audio-player.player-accessible .volume__button:hover, .green-audio-player.player-accessible .volume__controls:hover, .green-audio-player.player-accessible .download:hover": {
+              "outline": "dotted 1px #999"
+            },
+            ".green-audio-player svg, .green-audio-player img": {
+              "display": "block"
+            },
+            ".green-audio-player .holder": {
+              "position": "relative"
+            },
+            ".green-audio-player .holder .loading .loading__spinner": {
+              "position": "absolute",
+              "left": "-3px",
+              "bottom": "2px",
+              "width": "16px",
+              "height": "16px",
+              "border": "2px solid #b0b0b0",
+              "border-right-color": "rgba(0, 0, 0, 0)",
+              "border-radius": "50%",
+              "animation": "spin 0.4s linear infinite"
+            },
+            ".green-audio-player .holder .play-pause-btn": {
+              "visibility": "hidden",
+              "cursor": "pointer",
+              "outline": "none",
+              "fill": "@PlPaCol"
+            },
+            ".green-audio-player .holder .play-pause-btn:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .slider": {
+              "flex-grow": "1",
+              "background-color": "@PinCol2",
+              "cursor": "pointer",
+              "position": "relative"
+            },
+            ".green-audio-player .slider .gap-progress": {
+              "background-color": "@SliderCol",
+              "border-radius": "inherit",
+              "position": "absolute",
+              "pointer-events": "none"
+            },
+            "& when (@Dotonoff)": {
+              ".green-audio-player .slider .gap-progress .pin": {
+                "height": "16px",
+                "width": "16px",
+                "border-radius": "8px",
+                "background-color": "@ProgressCol",
+                "position": "absolute",
+                "pointer-events": "all",
+                "box-shadow": "0 1px 1px 0 rgba(0, 0, 0, 0.32)"
+              }
+            },
+            "& when not (@Dotonoff)": {
+              ".green-audio-player .slider .gap-progress .pin": {
+                "height": "16px",
+                "width": "16px",
+                "border-radius": "8px",
+                "background-color": "transparent",
+                "position": "absolute",
+                "pointer-events": "all"
+              }
+            },
+            ".green-audio-player .slider .gap-progress .pin::after": {
+              "content": "\"\"",
+              "display": "block",
+              "background": "rgba(0, 0, 0, 0)",
+              "width": "200%",
+              "height": "200%",
+              "margin-left": "-50%",
+              "margin-top": "-50%",
+              "border-radius": "50%"
+            },
+            ".green-audio-player .controls": {
+              "font-family": "\"Roboto\", sans-serif",
+              "font-size": "16px",
+              "line-height": "18px",
+              "color": "@TimeCol",
+              "display": "flex",
+              "flex-grow": "1",
+              "justify-content": "space-between",
+              "align-items": "center",
+              "margin-left": "15px",
+              "margin-right": "15px",
+              "outline": "none"
+            },
+            ".green-audio-player .controls .controls__slider": {
+              "margin-left": "16px",
+              "margin-right": "16px",
+              "border-radius": "2px",
+              "height": "4px"
+            },
+            ".green-audio-player .controls .controls__slider .controls__progress": {
+              "width": "0",
+              "height": "100%"
+            },
+            ".green-audio-player .controls .controls__slider .controls__progress .progress__pin": {
+              "right": "-8px",
+              "top": "-6px"
+            },
+            ".green-audio-player .controls span": {
+              "cursor": "default"
+            },
+            ".green-audio-player .controls:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .volume": {
+              "position": "relative"
+            },
+            "& when (@Volumeoff)": {
+              ".green-audio-player .volume_test": {
+                "height": "24px",
+                "width": "24px"
+              }
+            },
+            "& when not (@Volumeoff)": {
+              ".green-audio-player .volume_test": {
+                "height": "0px",
+                "width": "0px"
+              }
+            },
+            ".green-audio-player .volume .volume__button": {
+              "cursor": "pointer",
+              "outline": "none",
+              "fill": "@VolCol"
+            },
+            ".green-audio-player .volume .volume__button:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .volume .volume__button.open path": {
+              "fill": "@VolumeCol"
+            },
+            ".green-audio-player .volume .volume__controls": {
+              "width": "30px",
+              "height": "135px",
+              "background-color": "@VolColBack",
+              "opacity": "@VolBckCol",
+              "border-radius": "7px",
+              "position": "absolute",
+              "left": "-3px",
+              "bottom": "52px",
+              "flex-direction": "column",
+              "align-items": "center",
+              "display": "flex",
+              "z-index": "2",
+              "outline": "none"
+            },
+            ".green-audio-player .volume .volume__controls .volume__slider": {
+              "margin-top": "12px",
+              "margin-bottom": "12px",
+              "width": "6px",
+              "border-radius": "3px"
+            },
+            ".green-audio-player .volume .volume__controls .volume__slider .volume__progress": {
+              "bottom": "0",
+              "height": "100%",
+              "width": "6px"
+            },
+            ".green-audio-player .volume .volume__controls .volume__slider .volume__progress .volume__pin": {
+              "left": "-5px",
+              "top": "-8px"
+            },
+            ".green-audio-player .volume .volume__controls:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .volume .volume__controls.hidden": {
+              "display": "none"
+            },
+            ".green-audio-player .volume .volume__controls.top": {
+              "bottom": "52px",
+              "left": "-3px"
+            },
+            ".green-audio-player .volume .volume__controls.middle": {
+              "bottom": "-54px",
+              "left": "54px"
+            },
+            ".green-audio-player .volume .volume__controls.bottom": {
+              "bottom": "-164px",
+              "left": "-3px"
+            },
+            ".green-audio-player .download__link": {
+              "fill": "@DownCol"
+            },
+            ".green-audio-player .download": {
+              "display": "none",
+              "margin-left": "16px",
+              "cursor": "pointer",
+              "outline": "none",
+              "fill": "@DownCol"
+            },
+            ".green-audio-player .download:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player:focus": {
+              "outline": "none"
+            },
+            ".message__offscreen": {
+              "border": "0",
+              "clip": "rect(1px, 1px, 1px, 1px)",
+              "clip-path": "inset(50%)",
+              "height": "1px",
+              "margin": "-1px",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "width": "1px",
+              "word-wrap": "normal"
+            },
+            ".hidden": {
+              "display": "none"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "design-block",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"mbr-section\" plugins=\"audiobar\" group=\"Zen2cool Blocks\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n      <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\n\t <header>Player ID</header>\n\t\t        <input type=\"range\" inline title=\"Player ID (must be unique in each audio block on page)\" name=\"NumberPlayer\" min=\"1\" max=\"100\" step=\"1\" value=\"1\">v\n\t\t\n\t\t <header>Basic Settings</header>\n\t\t\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"11\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n                <input type=\"checkbox\" title=\"Texte\" name=\"showSubtxt\">\n\n <header>Player Config</header>\n        <input type=\"range\" inline title=\"Player Width\" name=\"PlaySize\" min=\"300\" max=\"1000\" step=\"1\" value=\"1000\">\n                <input type=\"range\" inline title=\"Player Radius\" name=\"PlayRad\" min=\"0\" max=\"100\" step=\"1\" value=\"0\">\n                       <input type=\"range\" inline title=\"Player Size Breakpoint\" name=\"Breakpoint\" min=\"500\" max=\"1500\" step=\"25\" value=\"500\">\n        <input type=\"color\" title=\"Player Color\" name=\"PlayerCol\" value=\"#000000\">\n        <select title=\"Position\" name=\"Positionpl\">\n        <option value=\"star\" selected>Left</option>\n        <option value=\"center\">Center</option>\n         <option value=\"end\">Right</option>\n        </select>\n\n       <header>Buttons Color</header>\n        <input type=\"color\" title=\"Play/Pause Button\" name=\"PlPaCol\" value=\"#a6a99c\">\n                   <input type=\"checkbox\" title=\"Volume On/Off\" name=\"Volumeoff\" checked>\n         <input type=\"color\" title=\"Volume Button\" name=\"VolCol\" value=\"#a6a99c\" condition=\"Volumeoff\">\n         <input type=\"color\" title=\"Volume Push Color\" name=\"VolumeCol\" value=\"#a6a99c\" condition=\"Volumeoff\">  \n\t\t <input type=\"color\" title=\"Background Volume\" name=\"VolColBack\" value=\"#a6a99c\" condition=\"Volumeoff\">\n        <input type=\"range\" inline title=\"Vol Background Opacity\" name=\"VolBckCol\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"Volumeoff\">\n        <input type=\"color\" title=\"Slider Color\" name=\"SliderCol\" value=\"#64e710\">\n        <input type=\"color\" title=\"Progress Color\" name=\"PinCol2\" value=\"#7787a5\">\n           <input type=\"checkbox\" title=\"Dot On/Off\" name=\"Dotonoff\" checked>\n        <input type=\"color\" title=\"Dot Progress Color\" name=\"ProgressCol\" value=\"#64e710\" condition=\"Dotonoff\">\n        <input type=\"color\" title=\"Time Color\" name=\"TimeCol\" value=\"#ffffff\">\n                <header>Download Button</header>  \n        <select title=\"Download Button\" name=\"Downbutton\">\n        <option value=\"player-with-download\">On</option>\n        <option value=\"player\" selected>Off</option>\n        </select>\n         <input type=\"color\" title=\"Download Color\" name=\"DownCol\" value=\"#000000\" condition=\"Downbutton == 'player-with-download'\">\n       \n        \n<header>Audio URL</header>\n            <input type=\"text\" title=\"Audio URL\" name=\"audioSrc\" value=\"https://larrylush.github.io/Blackunicornmusic/assets/radiomixes/atmospherica%202%209%20feb%202025-1.mp3\">\n            <input type=\"checkbox\" title=\"Loop\" name=\"loopoption\">\n            <input type=\"checkbox\" title=\"Autoplay\" name=\"Autoplay\">\n                    <select title=\"Preload\" name=\"PreLoad\">\n        <option value=\"auto\">On</option>\n        <option value=\"metadata\" selected>Metadata</option>\n               </select>\n                \n                        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/lionaf.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#0c1703\" selected>\n\n        </fieldset>\n                \n         <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#0c1703\" condition=\"bg.type == 'color'\">\n         <input type=\"range\" name=\"angle\" title=\"Angle\" min=\"0\" max=\"270\" value=\"145\" step=\"1\" condition=\"bg.type == 'color'\">\n\t\t <input type=\"checkbox\" title=\"Background Transparent\" name=\"transp\" condition=\"bg.type == 'color'\">\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" condition=\"overlay && bg.type !== 'color'\">\n        \n           \n    <!-- End block parameters -->\n    </mbr-parameters>\n       <div class=\"mbr-overlay\" mbr-if=\"overlay&&bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    \n    <div class=\"row justify-content-center\">\n            <div class=\"col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-section-title mbr-fonts-style mb-4\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\">\n                    Listen to <b>Radio Unicorn </b>- Atmospherica 9/2/2025</h3>\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                    Atmospherica 9/2/2025</h4>\n                <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtxt\">\n                    You can use content blocks to arrange your articles, large texts, instructions. Combine these blocks with media blocks to add illustrations and video tutorials. You can use various content blocks to work with your text. Add quotations, lists, buttons. Select your text to change its formatting or add links. Mobirise is a simple website builder that helps you create amazing web pages without knowing any code.</p>\n            </div>\n        </div>\n\n<div class=\"contenair\">\n<div class=\"ready-player-{{NumberPlayer}} {{Downbutton}}\">\n        <audio crossorigin preload=\"PreLoad\" loop=\"{{loopoption}}\" autoplay=\"{{Autoplay}}\">\n            <source src=\"{{audioSrc}}\" type=\"audio/mpeg\">\n            <source src=\"{{audioSrc}}\" type=\"audio/ogg\">\n            <source src=\"{{audioSrc}}\" type=\"audio/wav\">\n        </audio>\n   \n <script mbr-if=\"NumberPlayer == 1\">\n        document.addEventListener('DOMContentLoaded', function() {\n            GreenAudioPlayer.init({\n                selector: '.player',\n                stopOthersOnPlay: true\n            });\n\n            GreenAudioPlayer.init({\n                selector: '.player-with-download',\n                stopOthersOnPlay: true,\n                showDownloadButton: true,\n                enableKeystrokes: true\n            });\n\n            GreenAudioPlayer.init({\n                selector: '.player-with-accessibility',\n                stopOthersOnPlay: true,\n                enableKeystrokes: true\n            });\n        });\n    </script>\n   </div>\n </div>\n<div mbr-class=\"{'hidden': isPublish}\" style=\"padding:rem; background-color:#c1c1c1;\">\n   <div class=\"align-center\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" width=\"800px\" height=\"267px\" version=\"1.1\" style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd\" viewBox=\"0 0 800 266.67\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n <g id=\"Plan_x0020_1\">\n  <metadata id=\"CorelCorpID_0Corel-Layer\"></metadata>\n  <rect fill=\"{{PlayerCol}}\" x=\"27.27\" y=\"118.39\" width=\"653.97\" height=\"77.23\"></rect>\n  <rect mbr-if=\"Volumeoff\" fill=\"{{VolColBack}}\" opacity=\"{{VolBckCol}}\" x=\"696.04\" y=\"55.95\" width=\"65.73\" height=\"203.75\"></rect>\n  <polygon fill=\"{{PlPaCol}}\" points=\"77.28,154.27 64.16,163.12 51.05,171.98 51.05,154.27 51.05,136.56 64.16,145.41 \"></polygon>\n  <text x=\"94.71\" y=\"160.77\" fill=\"{{TimeCol}}\">00:00</text>\n  <text x=\"487.29\" y=\"160.77\" fill=\"{{TimeCol}}\">00:00</text>\n  <rect fill=\"{{SliderCol}}\" x=\"147.72\" y=\"152.39\" width=\"156.97\" height=\"3.76\"></rect>\n  <rect fill=\"{{PinCol2}}\" x=\"317.45\" y=\"152.39\" width=\"157.87\" height=\"3.76\"></rect>\n  <circle mbr-if=\"Dotonoff\" fill=\"{{ProgressCol}}\" cx=\"311.75\" cy=\"154.52\" r=\"13.12\"></circle>\n  <polygon mbr-if=\"Volumeoff\" fill=\"{{VolumeCol}}\" points=\"712.37,13.16 728.5,13.16 739.59,5.94 739.62,24.21 739.65,42.48 729.94,35.26 712.37,35.26 \"></polygon>\n  <rect mbr-if=\"Volumeoff\" fill=\"{{SliderCol}}\" transform=\"matrix(2.64845E-14 -0.803535 1 2.12813E-14 726.013 242.808)\" width=\"118.55\" height=\"5.77\"></rect>\n  <rect mbr-if=\"Volumeoff\" fill=\"{{PinCol2}}\" transform=\"matrix(2.64845E-14 -0.57436 1 1.52117E-14 726.013 135.441)\" width=\"118.55\" height=\"5.77\"></rect>\n  <circle mbr-if=\"Dotonoff\" fill=\"{{ProgressCol}}\" cx=\"728.76\" cy=\"139.54\" r=\"13.12\"></circle>\n  <g>\n   <path mbr-if=\"Downbutton == 'player-with-download'\" fill=\"{{DownCol}}\" d=\"M623.81 159.65l0 -25.53 1.07 0 0 25.53 -1.07 0zm0.53 11.01l-5.8 -11.61 11.61 0 -5.81 11.61z\"></path>\n  </g>\n  <polygon mbr-if=\"Volumeoff\" fill=\"{{VolCol}}\" points=\"546.22,142.66 562.35,142.66 573.45,135.44 573.47,153.71 573.5,171.98 563.79,164.76 546.22,164.76 \"></polygon>\n </g>\n     </svg>\n              <br><br><h10>Click the \"gear\" icon to customize the Player Bar. <br> <br> The player will appear when viewing or publishing <br><strong>but work only when you publish on the FTP server</strong><br><br> This text will be removed on preview/publish.<br><br>Original script https://codepen.io/gregh </h10>\n    </div></div>\n</section>",
+          "_cid": "zqaWC63fQA",
+          "_anchor": "design-block-zqaWC63fQA",
+          "_sourceTheme": "startm5",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
             "& when not (@fullScreen)": {
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
@@ -1417,6 +1693,139 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"social06\" group=\"Social\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showmainTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Subtitle\" name=\"showmainSubtitle\" checked>\n\t\t<header>Cards</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Text\" name=\"showText\">\n\t\t<input type=\"checkbox\" title=\"Icons\" name=\"showIcon\" checked>\n\t\t<input type=\"color\" title=\"Color\" name=\"iconColor\" value=\"#a0e1e1\" selected condition=\"showIcon\">\n\t\t<select title=\"Columns\" name=\"columns\">\n\t\t\t<option value=\"12\">1</option>\n\t\t\t<option value=\"6\">2</option>\n\t\t\t<option value=\"4\" selected>3</option>\n\t\t\t<option value=\"3\">4</option>\n\t\t</select>\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/pageback-2000x2829.png\" parallax>\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n\t\t</fieldset>\n\t\t<header condition=\"bg.type === 'video'\">Fallback Image</header>\n\t\t<input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.1\" condition=\"overlay && bg.type !== 'color'\">\n\t</mbr-parameters>\n\n\t<div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center\">\n\t\t\t<div class=\"col-12 content-head\">\n\t\t\t\t<div class=\"mb-5\" mbr-if=\"showmainTitle || showmainSubtitle\">\n\t\t\t\t\t<h5 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-1\" mbr-if=\"showmainTitle\" data-app-selector=\".mbr-section-title\">\n\t\t\t\t\t\t<b>Bandcamp Links</b></h5>\n\t\t\t\t\t<h6 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showmainSubtitle\" data-app-selector=\".mbr-section-subtitle\">#StopTheStream | #StartSupporting | #FairPlayMusic | #OwnYourSound</h6>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t\n\n\t\t\t<div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}} active\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<span mbr-icon class=\"mbr-iconfont m-auto socicon-bandcamp socicon\" mbr-if=\"showIcon\"></span>\n\t\t\t\t\t<div class=\"card-box\">\n\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\tFriends Lovers Family</h4>\n\t\t\t\t\t\t<h5 class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\"><a href=\"https://www.instagram.com/mobirise/\" class=\"text-success\">mobirise</a></h5>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<a href=\"https://quietmanmusic.bandcamp.com/\"><span mbr-icon class=\"mbr-iconfont m-auto socicon-bandcamp socicon\" mbr-if=\"showIcon\"></span></a>\n\t\t\t\t\t<div class=\"card-box\">\n\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\t<a href=\"https://quietmanmusic.bandcamp.com/\" class=\"text-white\" target=\"_blank\">Quietman</a></h4>\n\t\t\t\t\t\t<h5 class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\t<a href=\"https://www.tiktok.com/@mobirise\" class=\"text-success\">mobirise</a>\n\t\t\t\t\t\t</h5>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<a href=\"https://larrylush.bandcamp.com/music\"><span mbr-icon class=\"mbr-iconfont m-auto socicon-bandcamp socicon\" mbr-if=\"showIcon\"></span></a>\n\t\t\t\t\t<div class=\"card-box\">\n\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style mb-1\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\t<b><a href=\"https://larrylush.bandcamp.com/music\" class=\"text-white\">Black Unicorn Records</a></b></h4>\n\t\t\t\t\t\t<h5 class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\t<a href=\"https://www.youtube.com/mobirise\" class=\"text-success\">mobirise</a>\n\t\t\t\t\t\t</h5>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t</div>\n\t</div>\n</section>",
           "_cid": "uDh16bcARY",
           "_anchor": "social06-e",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "P": {
+              "color": "#1281fc"
+            },
+            "DIV": {
+              "color": "#ffffff"
+            },
+            "H10": {
+              "color": "#034e75"
+            },
+            ".hidden": {
+              "display": "none"
+            },
+            ".icon-bar": {
+              "z-index": "100002",
+              "position": "fixed",
+              "& when not (@Flagspos)": {
+                "right": "0"
+              },
+              "top": "(@topflag * 1%)",
+              "-webkit-transform": "translateY(-50%)",
+              "-ms-transform": "translateY(-50%)",
+              "transform": "translateY(-50%)",
+              "padding-right": "(@paddingleft * 1px)"
+            },
+            ".icon-bar a": {
+              "display": "block",
+              "text-align": "center",
+              "padding": "(@paddingflag * 1px)",
+              "transition": "all 0.3s ease",
+              "color": "white",
+              "font-size": "20px",
+              "padding-left": "(@paddingleft * 1px)"
+            },
+            ".icon-bar a:hover": {
+              "background-color": "@borderColor"
+            },
+            "& when not (@transp)": {
+              ".flag": {
+                "background": "@borderColor"
+              }
+            },
+            "& when (@transp)": {
+              ".flag": {
+                "background": "transparent"
+              }
+            },
+            ".content": {
+              "margin-left": "75px",
+              "font-size": "30px"
+            },
+            ".nav-right": {
+              "float": "left !important",
+              "position": "relative"
+            },
+            "#google_translate_element": {
+              "display": "none"
+            },
+            ".goog-te-banner": {
+              "display": "none"
+            },
+            ".skiptranslate": {
+              "display": "none",
+              "bottom": "0px",
+              "position": "relative"
+            },
+            ".goog-te-spinner-pos": {
+              "display": "none !important"
+            },
+            "body": {
+              "body": {
+                "top": "0 !important"
+              },
+              ".goog-te-banner-frame": {
+                "display": "none !important"
+              },
+              "top": "0px !important"
+            },
+            ".goog-te-banner-frame.skiptranslate": {
+              "display": "none !important"
+            },
+            ".goog-tooltip": {
+              "display": "none !important"
+            },
+            ".goog-tooltip:hover": {
+              "display": "none !important"
+            },
+            ".goog-text-highlight": {
+              "background-color": "transparent !important",
+              "border": "none !important",
+              "box-shadow": "none !important",
+              "display": "none !important",
+              "Background-color": "transparent"
+            },
+            "#goog-gt-tt, .goog-te-balloon-frame": {
+              "display": "none !important"
+            },
+            "#goog-gt-tt": {
+              "visibility": "hidden",
+              "display": "none !important"
+            },
+            ".goog-logo-link": {
+              "display": "none !important"
+            },
+            ".goog-te-gadget": {
+              "height": "28px !important",
+              "overflow": "hidden"
+            },
+            "div.imgtest": {
+              "margin-left": "auto",
+              "margin-right": "auto",
+              "width": "100px",
+              "content": "url(https://www.unsitepourtous.be/logoscript/logo-zen.png)"
+            },
+            "div.imgtest2": {
+              "margin-left": "auto",
+              "margin-right": "auto",
+              "width": "250px",
+              "content": "url(https://www.unsitepourtous.be/logoscript/flags145.png)"
+            }
+          },
+          "_name": "design-block",
+          "_customHTML": "<section data-bs-version=\"5.1\" mbr-id=\"_anchor\" class=\"_customHTML\">\n \n  \n    <mbr-parameters>\n<hr>\n\n      \n     <header>Float Flags Menu 1.4.6</header>\n\n       <input type=\"checkbox\" title=\"Show Flags Bar\" name=\"Flagsbar\" checked> \n              <input type=\"checkbox\" title=\"Bar Position\" name=\"Flagspos\" condition=\"Flagsbar\" checked>    \n        <input type=\"range\" inline title=\"Padding\" name=\"paddingflag\" min=\"1\" max=\"30\" step=\"1\" value=\"3\" condition=\"Flagsbar\">\n        <input type=\"range\" inline title=\"Padding Border\" name=\"paddingleft\" min=\"1\" max=\"30\" step=\"1\" value=\"30\" condition=\"Flagsbar\">\n        <input type=\"range\" inline title=\"Top\" name=\"topflag\" min=\"1\" max=\"100\" step=\"1\" value=\"47\" condition=\"Flagsbar\">\n   \n     <hr condition=\"Flagsbar\"><header condition=\"Flagsbar\">Color</header>\n\t\t <input type=\"checkbox\" title=\"Background Transparent\" name=\"transp\" condition=\"Flagsbar\" checked>\n          <input type=\"color\" title=\"Button Bckg Color\" name=\"borderColor\" value=\"#000000\" condition=\"Flagsbar\"> \n      \n     <hr condition=\"Flagsbar\"><header condition=\"Flagsbar\">Language</header>\n <input type=\"checkbox\" title=\"English\" name=\"langgb\" condition=\"Flagsbar\" checked>\n  <input type=\"checkbox\" title=\"French\" name=\"langfr\" condition=\"Flagsbar\">\n   <input type=\"checkbox\" title=\"Dutch\" name=\"langnl\" condition=\"Flagsbar\" checked>\n    <input type=\"checkbox\" title=\"German\" name=\"langde\" condition=\"Flagsbar\" checked>\n\t\t <input type=\"checkbox\" title=\"Spanish\" name=\"langes\" condition=\"Flagsbar\">\n                  \t\t <input type=\"checkbox\" title=\"Portugese\" name=\"langpt\" condition=\"Flagsbar\" checked>\n          <input type=\"checkbox\" title=\"Italian\" name=\"langit\" condition=\"Flagsbar\" checked>\n              <input type=\"checkbox\" title=\"Greek\" name=\"langgr\" condition=\"Flagsbar\"> \n                  <input type=\"checkbox\" title=\"Urdu\" name=\"langur\" condition=\"Flagsbar\"> \n     <input type=\"checkbox\" title=\"Russian\" name=\"langru\" condition=\"Flagsbar\" checked>\n     \n          <input type=\"checkbox\" title=\"China\" name=\"langzhtw\" condition=\"Flagsbar\">\n     <input type=\"checkbox\" title=\"Japan\" name=\"langja\" condition=\"Flagsbar\">\n     <input type=\"checkbox\" title=\"Korea\" name=\"langkr\" condition=\"Flagsbar\">\n                  \n      <hr condition=\"Flagsbar\"><header condition=\"Flagsbar\">WARNING</header>\n    <header condition=\"Flagsbar\">The start page must be in english, if your site is not en english, you must with code editor modify the line 49 and and replace \"en\" by your language code ( es, fr, de, ru,nl )</header>\n      \n\n        \n        \n    </mbr-parameters> \n    \n    \n    \n    \n  <script type=\"text/javascript\">\n  function googleTranslateElementInit() {\n    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false, multilanguagePage: true}, 'google_translate_element');\n  }\n</script>\n\n  <script type=\"text/javascript\">\nvar toolBar = document.getElementsByClassName('goog-te-banner-frame skiptranslate')[0];\nif(toolBar !== undefined) {\n    toolBar.style.display  = 'none';\n    document.body.style.top = '0px';\n}\n</script>\n\n\n  <script src=\"https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\" type=\"text/javascript\"></script>\n\n<style>\n.nav-right {\n  float: left !important;\n  position: relative;\n}\n\n#google_translate_element {\n  display: none;\n}\n\n.goog-te-banner {\n  display: none;\n}\n\n.2.container {\n  display: none;\n}\n\n.skiptranslate {\n  display: none;\n  bottom: 0px;\n  position: relative;\n}\n\n.goog-te-spinner-pos {\n  display: none !important;\n}\n\n.goog-logo-link{display: none !important;}\n.goog-te-gadget{height: 28px !important;  overflow: hidden;}\n\n.goog-te-banner-frame.skiptranslate {display: none !important;} \nbody { top: 0px !important; }\n\n\nbody {\nbody{ top: 0 !important;}\n.goog-te-banner-frame{display: none !important;}\n}\n\n.goog-tooltip {\n    display: none !important;\n}\n.goog-tooltip:hover {\n    display: none !important;\n}\n.goog-text-highlight {\n    background-color: transparent !important;\n    border: none !important; \n    box-shadow: none !important;\n}\n\n#goog-gt-tt, .goog-te-balloon-frame{display: none !important;} \n\n\n\n</style>\n\n<div class=\"icon-bar\" mbr-if=\"Flagsbar\">\n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(en)';location.reload();\" alt=\"EN\" title=\"EN\" class=\"flag\" mbr-if=\"langgb\"><i class=\"flag-icon-gb flag-icon\" mbr-if=\"langgb\"></i></a> \n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(fr)';location.reload();\" alt=\"FR\" title=\"FR\" class=\"flag\" mbr-if=\"langfr\"><i class=\"flag-icon-bl flag-icon\" mbr-if=\"langfr\"></i></a> \n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(nl)';location.reload();\" alt=\"NL\" title=\"NL\" class=\"flag\" mbr-if=\"langnl\"><i class=\"flag-icon-nl flag-icon\" mbr-if=\"langnl\"></i></a> \n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(de)';location.reload();\" alt=\"DE\" title=\"DE\" class=\"flag\" mbr-if=\"langde\"><i class=\"flag-icon-de flag-icon\" mbr-if=\"langde\"></i></a> \n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(es)';location.reload();\" alt=\"ES\" title=\"ES\" class=\"flag\" mbr-if=\"langes\"><i class=\"flag-icon-es flag-icon\" mbr-if=\"langes\"></i></a>\n \t \t \t \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(pt)';location.reload();\" alt=\"PT\" title=\"PT\" class=\"flag\" mbr-if=\"langpt\"><i class=\"flag-icon-pt flag-icon\" mbr-if=\"langpt\"></i></a> \n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(it)';location.reload();\" alt=\"IT\" title=\"IT\" class=\"flag\" mbr-if=\"langit\"><i class=\"flag-icon-it flag-icon\" mbr-if=\"langit\"></i></a> \n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(el)';location.reload();\" alt=\"GR\" title=\"GR\" class=\"flag\" mbr-if=\"langgr\"><i class=\"flag-icon-gr flag-icon\" mbr-if=\"langgr\"></i></a> \n \t \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(ur)';location.reload();\" alt=\"UR\" title=\"UR\" class=\"flag\" mbr-if=\"langur\"><i class=\"flag-icon-pk flag-icon\" mbr-if=\"langur\"></i></a>  \n \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(ru)';location.reload();\" alt=\"RU\" title=\"RU\" class=\"flag\" mbr-if=\"langru\"><i class=\"flag-icon-ru flag-icon\" mbr-if=\"langru\"></i></a> \n \t\n \t     \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(zh-CN)';location.reload();\" alt=\"CN\" title=\"CN\" class=\"flag\" mbr-if=\"langzhtw\"><i class=\"flag-icon-cn flag-icon\" mbr-if=\"langzhtw\"></i></a> \n     \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(ja)';location.reload();\" alt=\"JP\" title=\"JP\" class=\"flag\" mbr-if=\"langja\"><i class=\"flag-icon-jp flag-icon\" mbr-if=\"langja\"></i></a> \n     \t<a href=\"javascript:void()\" onclick=\"window.location.hash='#googtrans(ko)';location.reload();\" alt=\"KR\" title=\"KR\" class=\"flag\" mbr-if=\"langkr\"><i class=\"flag-icon-kr flag-icon\" mbr-if=\"langkr\"></i></a> \n\n\n</div>\n\n  \n \n <div mbr-class=\"{'hidden': isPublish}\" style=\"padding:1rem; background: linear-gradient( #807e7f, #f1f1f1, #807e7f);\">\n   <div class=\"align-center\">\n              <h10> <br><br><br><br><br><br><div class=\"imgtest2\"></div><br>Version 1.4.6<br>\n        Click the \"gear\" icon to change the layout of the flags bar. This text/logo will be removed on preview/publish.<br>You need the following extension for flags https://witsec.nl/extension-additional-icons.html#flag-icons<br><br><div class=\"imgtest\"></div><br><br><br></h10>\n\t\t\t\t\n    </div></div>\n</section>",
+          "_cid": "InWZSIVfUX",
+          "_anchor": "design-block-InWZSIVfUX",
+          "_sourceTheme": "startm5",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
