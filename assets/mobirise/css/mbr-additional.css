@@ -1336,6 +1336,11 @@ a {
   display: flex;
   padding-top: 3rem;
   padding-bottom: 1rem;
+  background-image: url("../../../assets/images/banner-nig-2000x369.png");
+}
+.cid-v18bRjX8wn .mbr-overlay {
+  background-color: #000000;
+  opacity: 0.5;
 }
 @media (min-width: 768px) {
   .cid-v18bRjX8wn {
@@ -1377,7 +1382,6 @@ a {
   height: 100%;
   position: absolute;
   top: 0;
-  background-image: url("../../../assets/images/background1.jpg");
 }
 .cid-v18bRjX8wn .mbr-section-title,
 .cid-v18bRjX8wn .mbr-section-subtitle {
@@ -1390,10 +1394,11 @@ a {
 }
 .cid-v18bRjX8wn .mbr-section-title {
   text-align: center;
-  color: #ffc091;
+  color: #64e710;
 }
 .cid-v18bRjX8wn .mbr-section-subtitle {
   text-align: center;
+  color: #9fe870;
 }
 .cid-v0RvHSY1xz {
   padding-top: 6rem;
