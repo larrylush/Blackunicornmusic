@@ -1343,7 +1343,7 @@ a {
 }
 .cid-v0RvHSY1xz {
   padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-bottom: 0rem;
   background-color: #0c1703;
 }
 .cid-v0RvHSY1xz .item-subtitle {
@@ -1390,13 +1390,13 @@ a {
   max-width: 800px;
 }
 .cid-v136V5X4X4 {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: -2rem;
   background-color: #0c1703;
 }
 @media (max-width: 767px) {
   .cid-v136V5X4X4 {
-    padding-bottom: 5rem;
+    padding-bottom: -1rem;
   }
 }
 .cid-v136V5X4X4 img,
