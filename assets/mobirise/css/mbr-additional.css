@@ -10,8 +10,9 @@ img,
 .slide-content,
 .plan,
 .card,
-.item-wrapper {
-  border-radius: 2rem !important;
+.item-wrapper,
+.item-wrapper .mbr-overlay {
+  border-radius: 0 !important;
 }
 .video-wrapper {
   overflow: hidden;
@@ -569,17 +570,12 @@ a.text-black.active {
   color: #000000 !important;
 }
 a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption) {
+  transition: 0.2s;
   position: relative;
-  background-image: transparent;
+  background-image: linear-gradient(currentColor 50%, currentColor 50%);
   background-size: 10000px 2px;
   background-repeat: no-repeat;
-  background-position: 0px 1.2em;
-  background-position: -10000px 1.2em;
-}
-a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption):hover {
-  transition: background-position 2s ease-in-out;
-  background-image: linear-gradient(currentColor 50%, currentColor 50%);
-  background-position: 0px 1.2em;
+  background-position: 0 1.2em;
 }
 .nav-tabs .nav-link.active {
   color: #9fe870;
@@ -751,6 +747,11 @@ a {
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+*:focus-visible {
+  outline: red solid 2px !important;
+  outline-offset: 2px !important;
+  transition: outline 0.2s ease-in-out;
 }
 .cid-uDfP9iMluz {
   z-index: 1000;
@@ -1435,7 +1436,7 @@ a {
 }
 .cid-v0RvHSY1xz .mbr-section-title {
   color: #ffffff;
-  text-align: left;
+  text-align: center;
 }
 .cid-v0RvHSY1xz .mbr-text,
 .cid-v0RvHSY1xz .mbr-section-btn {
@@ -1443,11 +1444,27 @@ a {
   text-align: left;
 }
 .cid-v0RvHSY1xz .item-title {
-  color: #f7f7f7;
+  color: #ffa600;
   text-align: left;
 }
 .cid-v0RvHSY1xz .content-head {
   max-width: 800px;
+}
+.cid-v1kTqVCcfv {
+  padding-top: 15px;
+  padding-bottom: 30px;
+  background-color: #0c1703;
+}
+.cid-v1kTqVCcfv iframe {
+  margin-left: auto;
+  margin-right: auto;
+}
+.cid-v1kTqVCcfv .container-fluid {
+  padding: 0;
+}
+.cid-v1kTqVCcfv .sc__title {
+  text-align: center;
+  color: #ffffff;
 }
 .cid-v136V5X4X4 {
   padding-top: 3rem;
@@ -1652,7 +1669,7 @@ a {
 .cid-uZVehLDTxe {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-image: url("../../../assets/images/alac-1024x1024.png");
+  background-image: url("../../../assets/images/alac-1-1024x1024.png");
 }
 .cid-uZVehLDTxe .mbr-fallback-image.disabled {
   display: none;
