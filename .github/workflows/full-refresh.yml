@@ -1,0 +1,32 @@
+name: Catalogue - Full refresh
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+concurrency:
+  group: catalogue-sync
+  cancel-in-progress: true
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nov26
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -u scripts/sync_catalogue.py
+        env:
+          FULL_REFRESH: 'true'
+      - name: Commit catalogue changes
+        run: |
+          git config user.name "Black Unicorn Catalogue"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalogue.json merch.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Sync Bandcamp catalogue"
+            git push origin HEAD:nov26
+          fi
