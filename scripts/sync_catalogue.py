@@ -87,7 +87,7 @@ for host in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendslover
     except Exception as e: print('Discovery failed:',host,e)
 seen_ids={(r.get('kind','album'),int(r['embed'])):r for r in records if r.get('embed')}
 updated=0
-for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
+for url in sorted(urls,key=lambda u: ('newlondonschoolofelectronics.bandcamp.com' not in u,'larrylush.bandcamp.com' not in u,u)):
     if time.monotonic()>DEADLINE: break
     old=known.get(url)
     if old and old.get('embed') and old.get('genre','Unclassified').casefold()!='unclassified' and not FULL_REFRESH: continue
@@ -107,6 +107,7 @@ for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
         if old:
             old['embed']=int(aid)
             old['kind']=kind
+            if p.meta.get('og:image'): old['img']=p.meta['og:image']
             seen_ids[(kind,int(aid))]=old
         elif (kind,int(aid)) in seen_ids:
             print('Duplicate album ID:',url,aid); continue
