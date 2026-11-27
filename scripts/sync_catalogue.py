@@ -109,10 +109,11 @@ for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
         tags=sorted({x.strip().casefold() for x in p.tags if x.strip()})
         if tags:
             record['tags']=tags
-            if tags:
-                for genre, pattern in [('Ambient',r'\bambient\b'),('Trance',r'\btrance\b'),('Breakbeat',r'\b(breakbeat|breaks)\b'),('House',r'\bhouse\b'),('Techno',r'\btechno\b'),('Dub',r'\bdub\b'),('Electronica',r'\b(electronica|electronic)\b')]:
-                    if any(re.search(pattern, tag) for tag in tags):
-                        record['genre']=genre; break
+            # Account-wide tags can appear on every release. Only explicit genre tags override curated genres.
+            for genre in ('Ambient','Trance','Breakbeat','House','Techno','Dub','Electronica','Archive'):
+                if any(tag in ('genre:'+genre.casefold(), 'genre: '+genre.casefold(), 'genre '+genre.casefold()) for tag in tags):
+                    record['genre']=genre
+                    break
         record['release_date']=c.get('release_date') or t.get('album_release_date') or record.get('release_date')
         record['metadata_checked']=bool(tags)
         updated+=1; print('Imported:',url,aid,'tags:',tags)
