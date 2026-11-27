@@ -37,7 +37,7 @@ def get(url):
     time.sleep(1)
     req=urllib.request.Request(url,headers={'User-Agent':'BlackUnicornCatalogue/1.0 (label catalogue sync)'})
     with urllib.request.urlopen(req,timeout=8) as r:
-        if urllib.parse.urlparse(r.url).hostname not in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com','newlondonschoolofelectronics.bandcamp.com'): raise ValueError('Unexpected redirect')
+        if urllib.parse.urlparse(r.url).hostname not in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com','newlondonschoolofelectronics.bandcamp.com','platipusmusic.bandcamp.com'): raise ValueError('Unexpected redirect')
         p=Page(); p.feed(r.read(4000000).decode('utf-8','replace')); return p
 
 def canonical(url):
