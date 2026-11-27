@@ -283,7 +283,7 @@
   {
     "title": "Still Life - Double Album",
     "artist": "Black Unicorn Recordings",
-    "genre": "Unclassified",
+    "genre": "Ambient",
     "kind": "album",
     "img": "https://f4.bcbits.com/img/a0200032590_5.jpg",
     "url": "https://larrylush.bandcamp.com/album/still-life-double-album",
@@ -291,7 +291,10 @@
     "description": "",
     "release_date": "28 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": []
+    "tags": [
+      "ambient",
+      "trance"
+    ]
   },
   {
     "title": "All I Know (Is What I Know)",
@@ -801,7 +804,7 @@
   {
     "title": "Still Life (Dance Side A)",
     "artist": "Friends, Lovers & Family",
-    "genre": "Breakbeat",
+    "genre": "Ambient",
     "kind": "track",
     "img": "https://f4.bcbits.com/img/a1886793150_5.jpg",
     "url": "https://friendsloversandfamily.bandcamp.com/track/still-life-dance-side-a-2",
@@ -810,8 +813,8 @@
     "release_date": "04 Nov 2025 09:41:53 GMT",
     "metadata_checked": true,
     "tags": [
-      "breakbeat",
-      "jungle"
+      "ambient",
+      "trance"
     ]
   },
   {
