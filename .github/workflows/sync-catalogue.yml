@@ -1,13 +1,7 @@
 name: Sync Bandcamp catalogue
 on:
   workflow_dispatch:
-    inputs:
-      full_refresh:
-        description: Refresh all release tags
-        type: boolean
-        default: true
-  schedule:
-    - cron: '20 4 * * *'
+
 permissions:
   contents: write
 concurrency:
@@ -15,6 +9,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   sync:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
