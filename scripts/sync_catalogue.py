@@ -37,7 +37,7 @@ def get(url):
     time.sleep(1)
     req=urllib.request.Request(url,headers={'User-Agent':'BlackUnicornCatalogue/1.0 (label catalogue sync)'})
     with urllib.request.urlopen(req,timeout=8) as r:
-        if urllib.parse.urlparse(r.url).hostname not in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com'): raise ValueError('Unexpected redirect')
+        if urllib.parse.urlparse(r.url).hostname not in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com','newlondonschoolofelectronics.bandcamp.com'): raise ValueError('Unexpected redirect')
         p=Page(); p.feed(r.read(4000000).decode('utf-8','replace')); return p
 
 def canonical(url):
@@ -65,6 +65,7 @@ for record in records:
         record['artist']=name; normalized+=1
 known={canonical(r['url']):r for r in records}
 urls=set(known)
+urls.add('https://newlondonschoolofelectronics.bandcamp.com/album/the-deepest-cut-21st-anniversary-producer-edition-new-london-school-of-electronics')
 def discover(value,base):
     if isinstance(value,dict):
         for v in value.values(): discover(v,base)
@@ -74,7 +75,7 @@ def discover(value,base):
         u=urllib.parse.urljoin(base,value); parts=urllib.parse.urlparse(u)
         if parts.hostname==urllib.parse.urlparse(base).hostname: urls.add(canonical(u))
 
-for host in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com'):
+for host in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com','newlondonschoolofelectronics.bandcamp.com'):
     try:
         base='https://'+host+'/music'
         p=get(base)
@@ -128,6 +129,10 @@ for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
         if record.get('genre','Unclassified').casefold()=='unclassified':
             candidates=[g for g in ('Ambient','Trance','Breakbeat','House','Techno','Dub','Electronica','Experimental','Eclectic') if g.casefold() in tags]
             if len(candidates)==1: record['genre']=candidates[0]
+        if urllib.parse.urlparse(url).hostname=='newlondonschoolofelectronics.bandcamp.com':
+            record['artist']='New London School of Electronics'
+            record['genre']='Ambient'
+            record['tags']=['ambient','electronica']
         record['release_date']=c.get('release_date') or t.get('album_release_date') or record.get('release_date')
         record['metadata_checked']=p.release_tags_seen
         updated+=1; print('Imported:',url,aid,'tags:',tags)
@@ -151,7 +156,7 @@ if len(unique)!=len(records):
 mp=Path('merch.json')
 merch=json.loads(mp.read_text())
 products={canonical(r['url']):r for r in merch}
-hosts=('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com')
+hosts=('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com','newlondonschoolofelectronics.bandcamp.com')
 def merch_links(value,base,out):
     if isinstance(value,dict):
         for v in value.values(): merch_links(v,base,out)
