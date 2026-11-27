@@ -1,6 +1,14 @@
 name: Sync Bandcamp catalogue
 on:
   workflow_dispatch:
+    inputs:
+      full_refresh:
+        description: Refresh all release tags
+        type: boolean
+        default: true
+  push:
+    branches: [nov26]
+    paths: ['scripts/sync_catalogue.py']
   push:
     branches: [nov26]
     paths:
@@ -14,7 +22,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -28,5 +36,5 @@ jobs:
           git add catalogue.json merch.json
           if ! git diff --cached --quiet; then
             git commit -m "Sync Bandcamp catalogue"
-            git push origin HEAD:nov26
+            git push origin HEAD:nov26 origin HEAD:nov26
           fi
