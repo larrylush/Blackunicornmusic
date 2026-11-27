@@ -1,16 +1,7 @@
 name: Sync Bandcamp catalogue
 on:
   workflow_dispatch:
-    inputs:
-      full_refresh:
-        description: Refresh all release tags
-        type: boolean
-        default: true
-  push:
-    branches: [nov26]
-    paths:
-      - scripts/sync_catalogue.py
-      - .github/workflows/sync-catalogue.yml
+
 permissions:
   contents: write
 concurrency:
@@ -18,6 +9,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   sync:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
