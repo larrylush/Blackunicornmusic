@@ -60,7 +60,7 @@
   const dialog = document.createElement('dialog');
   dialog.setAttribute('aria-label', 'Analytics preferences');
   const copy = document.createElement('p');
-  copy.textContent = "Optional analytics help us understand visits, returning visitors, referral sources, general location and device information. A random browser identifier is stored for up to 90 days. It's entirely your choice, and you can change your preferences anytime.";
+  copy.textContent = "Optional analytics help us understand visits, returning visitors, referral sources, general location and device information. A random browser identifier is stored for up to 90 days. It's entirely your choice, and you can change your choice anytime under Privacy & analytics preferences in the Explore menu.";
   dialog.id = 'bu-analytics-dialog';
   const heading = document.createElement('h2');
   heading.textContent = 'Help us make Black Unicorn even better';
