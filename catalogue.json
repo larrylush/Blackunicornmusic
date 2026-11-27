@@ -936,7 +936,7 @@
   {
     "title": "Linde (Single Release)",
     "artist": "Quietman",
-    "genre": "Unclassified",
+    "genre": "Trance",
     "kind": "album",
     "img": "https://f4.bcbits.com/img/a1441915861_5.jpg",
     "url": "https://quietmanmusic.bandcamp.com/album/linde-single-release",
@@ -944,7 +944,10 @@
     "description": "",
     "release_date": "11 Nov 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": []
+    "tags": [
+      "trance",
+      "ambient"
+    ]
   },
   {
     "title": "Makena The Remixes",
