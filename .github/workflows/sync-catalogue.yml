@@ -8,8 +8,6 @@ on:
         default: true
   schedule:
     - cron: '20 4 * * *'
-  schedule:
-    - cron: '17 4 * * *'
 permissions:
   contents: write
 concurrency:
@@ -27,6 +25,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -u scripts/sync_catalogue.py
+        env:
+          FULL_REFRESH: ${{ github.event_name == 'push' || inputs.full_refresh == true }}
       - name: Commit catalogue changes
         run: |
           git config user.name "Black Unicorn Catalogue"
@@ -34,5 +34,5 @@ jobs:
           git add catalogue.json merch.json
           if ! git diff --cached --quiet; then
             git commit -m "Sync Bandcamp catalogue"
-            git push origin HEAD:nov26 origin HEAD:nov26
+            git push origin HEAD:nov26
           fi
