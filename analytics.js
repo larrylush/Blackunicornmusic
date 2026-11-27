@@ -60,9 +60,22 @@
   const dialog = document.createElement('dialog');
   dialog.setAttribute('aria-label', 'Analytics preferences');
   const copy = document.createElement('p');
-  copy.textContent = 'Allow optional analytics to measure visits, repeat visits, referring sites, broad location and device type. A random browser ID lasts up to 90 days. You can change this choice anytime.';
-  dialog.append(copy);
-  for (const [name,value] of [['Decline analytics','decline'],['Allow analytics','allow']]) {
+  copy.textContent = "Optional analytics help us understand visits, returning visitors, referral sources, general location and device information. A random browser identifier is stored for up to 90 days. It's entirely your choice, and you can change your preferences anytime.";
+  dialog.id = 'bu-analytics-dialog';
+  const heading = document.createElement('h2');
+  heading.textContent = 'Help us make Black Unicorn even better';
+  const intro = document.createElement('p');
+  intro.textContent = "We're an independent music label and audio software developer. With your permission, we'd love to understand how people explore our website and how we can improve their experience.";
+  const style = document.createElement('style');
+  style.textContent = '#bu-analytics-dialog{box-sizing:border-box;width:min(92vw,460px);padding:26px;border:1px solid #555;border-radius:12px;background:#181818;color:#f5f2ed;font:15px/1.55 system-ui,sans-serif;margin:auto}#bu-analytics-dialog::backdrop{background:#0007}#bu-analytics-dialog h2{font-size:24px;line-height:1.2;color:#e8bb77;margin:0 0 14px}#bu-analytics-dialog p{margin:0 0 14px;color:inherit}#bu-analytics-dialog button{background:#292929;color:#fff;border:1px solid #888;border-radius:5px;padding:10px 14px;margin:5px 8px 0 0;font:inherit;cursor:pointer}#bu-analytics-dialog button:hover{border-color:#e8bb77}#bu-analytics-dialog a{color:#e8bb77}';
+  document.head.append(style);
+  const privacy = document.createElement('a');
+  privacy.href = '/Blackunicornmusic/legal.html';
+  privacy.textContent = 'Privacy information';
+  const details = document.createElement('p');
+  details.append(privacy);
+  dialog.append(heading,intro,copy,details);
+  for (const [name,value] of [['No thanks','decline'],['Happy to help','allow']]) {
     const button = document.createElement('button');
     button.type = 'button';
     button.textContent = name;
