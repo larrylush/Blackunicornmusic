@@ -11,23 +11,8 @@
     "release_date": "02 Oct 2026 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "90s trance",
-      "ambient",
-      "balearic",
-      "chillout",
-      "classic trance",
-      "electronic",
-      "experimental",
-      "melodic electronic",
-      "old school trance",
-      "portugal",
-      "progressive electronic",
-      "progressive trance",
-      "psy",
-      "psychedelic",
-      "psychedelic trance",
-      "quietman",
-      "uk electronic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -42,18 +27,8 @@
     "release_date": "27 Oct 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "breakbeats & dubstep",
-      "breaks",
-      "drum & bass",
-      "drum and bass (musical genre)",
-      "electronic",
-      "electronica",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "breaks"
     ]
   },
   {
@@ -63,7 +38,10 @@
     "img": "https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/better-700x700.webp",
     "url": "https://larrylush.bandcamp.com/album/better-than-you",
     "embed": 3872858211,
-    "description": "A lyrical exploration of narcissism, modern life and electronic music."
+    "description": "A lyrical exploration of narcissism, modern life and electronic music.",
+    "tags": [
+      "electronica"
+    ]
   },
   {
     "title": "THAT!",
@@ -72,7 +50,10 @@
     "img": "https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/that-700x700.webp",
     "url": "https://larrylush.bandcamp.com/album/that-techno-house-abstract-trance",
     "embed": 0,
-    "description": "Techno, house and abstract trance."
+    "description": "Techno, house and abstract trance.",
+    "tags": [
+      "electronica"
+    ]
   },
   {
     "title": "Trancestors",
@@ -86,14 +67,8 @@
     "release_date": "15 Jul 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic",
-      "quietman"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -108,11 +83,8 @@
     "release_date": "05 Nov 2024 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "breaks and breakbeat",
-      "chilled beats",
-      "drum & bass",
-      "intelligent drum & bass",
-      "united kingdom"
+      "dub",
+      "breaks and breakbeat"
     ]
   },
   {
@@ -127,12 +99,8 @@
     "release_date": "28 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "80's",
-      "ambient electronic",
-      "mysterious",
-      "synth",
-      "synthesizer",
-      "united kingdom"
+      "electronica",
+      "ambient electronic"
     ]
   },
   {
@@ -147,7 +115,7 @@
     "release_date": "08 Apr 2024 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "united kingdom"
+      "ambient"
     ]
   },
   {
@@ -163,13 +131,7 @@
     "metadata_checked": true,
     "tags": [
       "ambient",
-      "chill-out",
-      "crystals",
-      "electronica",
-      "healing & meditation",
-      "larry lush",
-      "meditation",
-      "united kingdom"
+      "chill-out"
     ]
   },
   {
@@ -184,7 +146,7 @@
     "release_date": "23 Aug 2022 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "united kingdom"
+      "electronica"
     ]
   },
   {
@@ -194,7 +156,8 @@
     "img": "https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/selected-art-works-1990-2000-larry-lush-v3-596x596.webp",
     "url": "https://larrylush.bandcamp.com/album/selected-ambient-works-by-larry-lush-1990-2000",
     "embed": 4007759925,
-    "description": "A decade of ambient recordings."
+    "description": "A decade of ambient recordings.",
+    "tags": []
   },
   {
     "title": "Interiors",
@@ -203,7 +166,10 @@
     "img": "https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/a2404088943-2-350x350.webp",
     "url": "https://larrylush.bandcamp.com/album/interiors",
     "embed": 2291175247,
-    "description": "Atmospheric electronic music."
+    "description": "Atmospheric electronic music.",
+    "tags": [
+      "ambient"
+    ]
   },
   {
     "title": "Sacred Sines",
@@ -217,7 +183,7 @@
     "release_date": "09 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "united kingdom"
+      "ambient"
     ]
   },
   {
@@ -233,11 +199,7 @@
     "metadata_checked": true,
     "tags": [
       "ambient",
-      "chillout",
-      "meditation music",
-      "new age",
-      "relaxation music",
-      "united kingdom"
+      "chillout"
     ]
   },
   {
@@ -253,11 +215,7 @@
     "metadata_checked": true,
     "tags": [
       "ambient",
-      "chillout",
-      "meditation music",
-      "new age",
-      "relaxation music",
-      "united kingdom"
+      "chillout"
     ]
   },
   {
@@ -273,11 +231,7 @@
     "metadata_checked": true,
     "tags": [
       "ambient",
-      "chillout",
-      "meditation music",
-      "new age",
-      "relaxation music",
-      "united kingdom"
+      "chillout"
     ]
   },
   {
@@ -291,9 +245,7 @@
     "description": "An eclectic collection of collaborations and solo work from the Lush studio archives.",
     "release_date": "23 Aug 2022 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "united kingdom"
-    ]
+    "tags": []
   },
   {
     "title": "Machine Dreams Promo",
@@ -306,9 +258,7 @@
     "description": "",
     "release_date": "30 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "united kingdom"
-    ]
+    "tags": []
   },
   {
     "title": "Mark Sinclair & Larry Lush Remixology Vol.1",
@@ -321,9 +271,7 @@
     "description": "",
     "release_date": "01 Jan 2015 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "united kingdom"
-    ]
+    "tags": []
   },
   {
     "title": "Still Life - Double Album",
@@ -336,9 +284,7 @@
     "description": "",
     "release_date": "28 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "united kingdom"
-    ]
+    "tags": []
   },
   {
     "title": "All I Know (Is What I Know)",
@@ -352,11 +298,8 @@
     "release_date": "17 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "funky techno",
       "house",
-      "minimal house",
-      "tech house",
-      "united kingdom"
+      "tech house"
     ]
   },
   {
@@ -372,8 +315,7 @@
     "metadata_checked": true,
     "tags": [
       "house",
-      "techno",
-      "united kingdom"
+      "techno"
     ]
   },
   {
@@ -389,16 +331,6 @@
     "metadata_checked": true,
     "tags": [
       "ambient",
-      "chill",
-      "electronic",
-      "electronica",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic",
-      "psychedelic chillout",
-      "relaxing",
       "soundscape"
     ]
   },
@@ -413,15 +345,7 @@
     "kind": "album",
     "release_date": "04 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "Ordinary People Original and Alternate Mixes Remastered 2025",
@@ -435,13 +359,8 @@
     "release_date": "27 Apr 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -456,13 +375,8 @@
     "release_date": "17 Dec 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -477,13 +391,8 @@
     "release_date": "23 Feb 2021 17:35:21 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -498,13 +407,8 @@
     "release_date": "23 Feb 2021 23:04:16 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -519,13 +423,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -540,13 +439,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -561,13 +455,8 @@
     "release_date": "23 Feb 2021 23:04:22 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -582,13 +471,8 @@
     "release_date": "23 Feb 2021 18:36:07 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -603,13 +487,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -624,13 +503,8 @@
     "release_date": "24 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -645,13 +519,8 @@
     "release_date": "21 Feb 2017 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -666,13 +535,8 @@
     "release_date": "24 Feb 2021 09:29:35 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -687,13 +551,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -708,13 +567,8 @@
     "release_date": "29 Oct 2025 22:18:55 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -729,13 +583,8 @@
     "release_date": "29 Apr 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -750,13 +599,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -771,13 +615,8 @@
     "release_date": "24 Feb 2021 10:13:37 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -792,13 +631,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -813,13 +647,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -834,13 +663,8 @@
     "release_date": "23 Feb 2021 23:33:11 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -855,13 +679,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -876,13 +695,8 @@
     "release_date": "24 Feb 2021 09:43:59 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -897,13 +711,8 @@
     "release_date": "23 Feb 2021 23:45:20 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -918,13 +727,8 @@
     "release_date": "23 Feb 2021 23:23:32 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -939,13 +743,8 @@
     "release_date": "23 Feb 2021 23:18:13 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -960,13 +759,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -981,13 +775,8 @@
     "release_date": "23 Feb 2021 18:15:40 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1002,13 +791,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1023,13 +807,8 @@
     "release_date": "04 Nov 2025 09:41:53 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1044,13 +823,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1065,13 +839,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1086,13 +855,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1107,13 +871,8 @@
     "release_date": "23 Feb 2021 23:18:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1128,13 +887,8 @@
     "release_date": "23 Feb 2021 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambiet",
       "breakbeat",
-      "electronic",
-      "experimental",
-      "jungle",
-      "london",
-      "techno"
+      "jungle"
     ]
   },
   {
@@ -1149,13 +903,7 @@
     "release_date": "08 Mar 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "ambient"
     ]
   },
   {
@@ -1169,15 +917,7 @@
     "description": "FOUND HORIZONS – VOLUME 2\r\nQUIETMAN • 30 YEARS DEEP IN THE ARCHIVES\r\n\r\nSomewhere between the first experiments of the early 90s and the music we're making today, there's a whole universe of Quietman waiting to be rediscovered.\r\n\r\nFound Horizons – Volume 2 opens the vault once again.\r\n\r\nSpanning more than three decades of Quietman recordings, this collection brings together rare remixes, forgotten releases, tracks once heard only in live sets, studio experiments, alternative versions, lost recordings and demos from albums that never quite made it into the world.\r\n\r\nDrawn from original studio masters, archive recordings and forgotten corners of the Quietman catalogue, these are pieces from different chapters of the journey. Some may be familiar to those who've followed Quietman over the years; others have remained tucked away in the archives, waiting for another moment in the sun.\r\n\r\nFrom deep melodic journeys and atmospheric explorations to unexpected collaborations, alternative directions and beautifully strange studio detours, Found Horizons2 celebrates the many paths Quietman has travelled — including those that led somewhere unexpected.\r\n\r\nNot quite a retrospective. Not quite a rarities collection. More like discovering a parallel history of Quietman, one recording at a time.\r\n\r\nThirty years of experiments, ideas, adventures and musical horizons.\r\n\r\nSome remembered. Some forgotten. Some never heard before. All part of the journey.\r\n\r\nWelcome back to the Quietman universe.",
     "release_date": "04 Nov 2026 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "Interiors EP",
@@ -1192,14 +932,7 @@
     "metadata_checked": true,
     "tags": [
       "ambient",
-      "ambient electronic",
-      "electronic",
-      "experimental",
-      "meditative",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "ambient electronic"
     ]
   },
   {
@@ -1213,15 +946,7 @@
     "description": "",
     "release_date": "11 Nov 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "Makena The Remixes",
@@ -1235,13 +960,8 @@
     "release_date": "12 Aug 2026 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1256,13 +976,8 @@
     "release_date": "22 Apr 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1277,15 +992,8 @@
     "release_date": "03 Oct 2026 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "electronic music",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic",
-      "trance"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1300,13 +1008,8 @@
     "release_date": "03 Dec 2025 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1320,15 +1023,7 @@
     "description": "",
     "release_date": "10 Oct 2022 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "After the Fire",
@@ -1343,14 +1038,7 @@
     "metadata_checked": true,
     "tags": [
       "ambient",
-      "ambient electronic",
-      "chillout",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "ambient electronic"
     ]
   },
   {
@@ -1364,15 +1052,7 @@
     "description": "The Original remix of Diamond Lils' by Friends Lovers and Family originally released on Lush Records.",
     "release_date": "20 Aug 2022 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "Dust2Water",
@@ -1385,15 +1065,7 @@
     "description": "",
     "release_date": "16 Sep 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "Full Throttle",
@@ -1407,18 +1079,8 @@
     "release_date": "20 Aug 2022 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "acid",
-      "ambient",
-      "arpeggios",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive",
-      "progressive trance",
-      "psy",
-      "psy trance",
-      "psychedelic",
-      "trance"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1433,13 +1095,8 @@
     "release_date": "22 Apr 2024 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1454,13 +1111,8 @@
     "release_date": "10 Nov 2024 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1475,13 +1127,8 @@
     "release_date": "20 Aug 2022 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1495,15 +1142,7 @@
     "description": "",
     "release_date": "23 Oct 2022 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "More Like This",
@@ -1516,15 +1155,7 @@
     "description": "",
     "release_date": "07 Apr 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "Oráculo",
@@ -1537,15 +1168,7 @@
     "description": "",
     "release_date": "03 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
-    ]
+    "tags": []
   },
   {
     "title": "Tamagotchi™️ Love",
@@ -1559,13 +1182,8 @@
     "release_date": "12 Dec 2022 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1580,13 +1198,7 @@
     "release_date": "10 Oct 2022 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "techno"
     ]
   },
   {
@@ -1601,13 +1213,8 @@
     "release_date": "27 Aug 2022 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "trance",
+      "progressive trance"
     ]
   },
   {
@@ -1622,13 +1229,7 @@
     "release_date": "09 Sep 2022 00:00:00 GMT",
     "metadata_checked": true,
     "tags": [
-      "ambient",
-      "electronic",
-      "experimental",
-      "portugal",
-      "progressive trance",
-      "psy",
-      "psychedelic"
+      "ambient"
     ]
   }
 ]
