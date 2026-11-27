@@ -45,12 +45,17 @@
   });
   document.head.append(style);
   document.body.append(dialog);
+  function closeOnRestore(event) {
+    if (event.persisted && dialog.open) dialog.close();
+  }
   dialog.addEventListener('close', () => {
-    try { sessionStorage.setItem(key, '1'); } catch {}
+    window.removeEventListener('pageshow', closeOnRestore);
     dialog.remove();
     style.remove();
   }, { once: true });
   dialog.showModal();
+  try { sessionStorage.setItem(key, '1'); } catch {}
+  window.addEventListener('pageshow', closeOnRestore);
   // Close the offer at the deadline even if the page remains open.
   setTimeout(() => { if (dialog.open) dialog.close(); }, Math.max(0, endsAt - Date.now()));
 })();
