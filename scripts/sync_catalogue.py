@@ -89,7 +89,7 @@ updated=0
 for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
     if time.monotonic()>DEADLINE: break
     old=known.get(url)
-    if old and old.get('embed') and not FULL_REFRESH: continue
+    if old and old.get('embed') and old.get('genre','Unclassified').casefold()!='unclassified' and not FULL_REFRESH: continue
     try:
         kind='track' if '/track/' in urllib.parse.urlparse(url).path else 'album'
         p=get(url); t=p.data.get('data-tralbum',{}); c=t.get('current') or {}
@@ -119,12 +119,15 @@ for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
         record=old if old else records[-1]
         tags=sorted({x.strip().casefold() for x in p.tags if x.strip()})
         if p.release_tags_seen:
-            record['tags']=tags
+            record['tags']=[tag for tag in tags if tag not in ('portugal','london','united kingdom','uk electronic','quietman','larry lush','ambiet') and tag in ('ambient','trance','breakbeat','house','techno','dub','electronica','experimental','eclectic','progressive trance','classic trance','chillout','drum & bass','jungle','soundscape')][:2]
             # Account-wide tags can appear on every release. Only explicit genre tags override curated genres.
             for genre in ('Ambient','Trance','Breakbeat','House','Techno','Dub','Electronica','Archive'):
                 if any(tag in ('genre:'+genre.casefold(), 'genre: '+genre.casefold(), 'genre '+genre.casefold()) for tag in tags):
                     record['genre']=genre
                     break
+        if record.get('genre','Unclassified').casefold()=='unclassified':
+            candidates=[g for g in ('Ambient','Trance','Breakbeat','House','Techno','Dub','Electronica','Experimental','Eclectic') if g.casefold() in tags]
+            if len(candidates)==1: record['genre']=candidates[0]
         record['release_date']=c.get('release_date') or t.get('album_release_date') or record.get('release_date')
         record['metadata_checked']=p.release_tags_seen
         updated+=1; print('Imported:',url,aid,'tags:',tags)
