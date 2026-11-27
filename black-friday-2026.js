@@ -7,7 +7,7 @@
   try { if (sessionStorage.getItem(key)) return; } catch {}
   const style = document.createElement('style');
   style.textContent = `
-    #black-friday-offer{box-sizing:border-box;width:min(92vw,490px);max-height:90vh;margin:auto;padding:clamp(22px,6vw,42px);border:1px solid #e8bb77;border-radius:10px;background:#151515;color:#faf6f0;font:16px/1.5 system-ui,sans-serif;text-align:left}
+    #black-friday-offer{box-sizing:border-box;width:min(92vw,490px);max-height:90vh;margin:auto;padding:clamp(22px,6vw,42px);border:1px solid #e8bb77;border-radius:10px;background:linear-gradient(180deg,rgba(16,16,17,.55),#151515 75%),url('assets/images/music20to20-1200x1200.webp') center top/cover;color:#faf6f0;font:16px/1.5 system-ui,sans-serif;text-align:left}
     #black-friday-offer::backdrop{background:rgba(0,0,0,.76)}
     #black-friday-offer h2{font:800 clamp(38px,10vw,64px)/1 system-ui,sans-serif;letter-spacing:-.06em;margin:0 36px 12px 0;color:#fff;text-align:left}
     #black-friday-offer p{margin:0 0 15px;color:#faf6f0}
@@ -27,12 +27,12 @@
   dialog.setAttribute('aria-describedby', 'black-friday-description');
   dialog.innerHTML = `
     <form method="dialog"><button class="bf-close" aria-label="Close Black Friday offer" autofocus>×</button></form>
-    <p class="bf-label">BLACK UNICORN RECORDS</p>
-    <h2 id="black-friday-title">Black Friday</h2>
-    <p id="black-friday-description"><strong>30% off on Bandcamp</strong><br>Through Sunday 29 November, Lisbon time.</p>
+    <p class="bf-label">BLACK UNICORN MUSIC</p>
+    <h2 id="black-friday-title">BLACK FRIDAY</h2>
+    <p id="black-friday-description"><strong style="font-size:clamp(36px,9vw,58px);line-height:1.1;letter-spacing:-.05em">30% OFF</strong><br>ON BANDCAMP<br>Through Sunday 29 November, Lisbon time.</p>
     <p>Use code <code>${code}</code> at checkout.</p>
     <div class="bf-actions"><button type="button" data-copy>Copy code</button><a href="https://larrylush.bandcamp.com/">Shop on Bandcamp →</a></div>
-    <p class="bf-status" role="status"></p>
+    <p class="bf-status" role="status"></p><p style="margin-top:18px;font-size:13px;color:#e8bb77">Independent music. Without boundaries.</p>
   `;
   const status = dialog.querySelector('.bf-status');
   dialog.querySelector('[data-copy]').addEventListener('click', async () => {
