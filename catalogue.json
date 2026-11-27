@@ -1171,7 +1171,7 @@
   {
     "title": "Oráculo",
     "artist": "Quietman",
-    "genre": "Unclassified",
+    "genre": "Trance",
     "kind": "track",
     "img": "https://f4.bcbits.com/img/a3084527769_5.jpg",
     "url": "https://quietmanmusic.bandcamp.com/track/or-culo",
@@ -1179,7 +1179,9 @@
     "description": "",
     "release_date": "03 Oct 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": []
+    "tags": [
+      "trance"
+    ]
   },
   {
     "title": "Tamagotchi™️ Love",
