@@ -79,7 +79,6 @@ seen_ids={(r.get('kind','album'),int(r['embed'])):r for r in records if r.get('e
 updated=0
 for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
     old=known.get(url)
-    if old and old.get('embed') and old.get('metadata_checked'): continue
     try:
         kind='track' if '/track/' in urllib.parse.urlparse(url).path else 'album'
         p=get(url); t=p.data.get('data-tralbum',{}); c=t.get('current') or {}
@@ -110,7 +109,7 @@ for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
         tags=sorted({x.strip().casefold() for x in p.tags if x.strip()})
         if tags:
             record['tags']=tags
-            if record.get('genre','Unclassified')=='Unclassified':
+            if tags:
                 for genre, pattern in [('Ambient',r'\bambient\b'),('Trance',r'\btrance\b'),('Breakbeat',r'\b(breakbeat|breaks)\b'),('House',r'\bhouse\b'),('Techno',r'\btechno\b'),('Dub',r'\bdub\b'),('Electronica',r'\b(electronica|electronic)\b')]:
                     if any(re.search(pattern, tag) for tag in tags):
                         record['genre']=genre; break
