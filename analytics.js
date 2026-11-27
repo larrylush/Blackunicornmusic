@@ -98,13 +98,12 @@
     event.preventDefault();
     openPreferences();
   }, true);
-  if (location.hash === '#analytics-preferences') openPreferences();
   if (!document.querySelector('footer [data-analytics-preferences]')) {
     const information = [...document.querySelectorAll('footer h2,footer h3,footer h4')].find(h => h.textContent.trim() === 'Information');
     if (information) information.parentElement.append(settings);
   }
   document.body.append(dialog);
-  if (!localStorage.getItem(preference)) {
+  if (location.hash === '#analytics-preferences' || !localStorage.getItem(preference)) {
     const openDialog = document.querySelector('dialog[open]');
     if (openDialog) openDialog.addEventListener('close', () => dialog.showModal(), {once:true});
     else dialog.showModal();
