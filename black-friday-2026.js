@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const code = 'Friday26';
+  const code = 'friday26';
   const endsAt = Date.parse('2026-11-30T00:00:00Z');
   const key = 'black-unicorn-black-friday-2026';
   if (Date.now() >= endsAt || typeof HTMLDialogElement === 'undefined') return;
