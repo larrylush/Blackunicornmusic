@@ -1016,7 +1016,7 @@
   {
     "title": "Abre tu Corazón",
     "artist": "Quietman",
-    "genre": "Unclassified",
+    "genre": "Trance",
     "kind": "track",
     "img": "https://f4.bcbits.com/img/a2017649199_5.jpg",
     "url": "https://quietmanmusic.bandcamp.com/track/abre-tu-coraz-n",
@@ -1024,7 +1024,9 @@
     "description": "",
     "release_date": "10 Oct 2022 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": []
+    "tags": [
+      "trance"
+    ]
   },
   {
     "title": "After the Fire",
@@ -1060,7 +1062,7 @@
   {
     "title": "Dust2Water",
     "artist": "Quietman",
-    "genre": "Unclassified",
+    "genre": "Trance",
     "kind": "track",
     "img": "https://f4.bcbits.com/img/a2169071904_5.jpg",
     "url": "https://quietmanmusic.bandcamp.com/track/dust2water",
@@ -1068,7 +1070,9 @@
     "description": "",
     "release_date": "16 Sep 2024 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": []
+    "tags": [
+      "trance"
+    ]
   },
   {
     "title": "Full Throttle",
