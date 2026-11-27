@@ -4,15 +4,19 @@ from pathlib import Path
 
 class Page(HTMLParser):
     def __init__(self):
-        super().__init__(); self.data={}; self.links=[]; self.meta={}; self.tags=set(); self.tag_text=False
+        super().__init__(); self.data={}; self.links=[]; self.meta={}; self.tags=set(); self.tag_text=False; self.tag_scope=0; self.div_stack=[]; self.release_tags_seen=False
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
+        if tag=='div':
+            scope='tralbum-tags' in a.get('class','').split()
+            self.div_stack.append(scope)
+            if scope: self.tag_scope+=1; self.release_tags_seen=True
         if tag=='a' and a.get('href'):
             self.links.append(a['href'])
             u=urllib.parse.urlparse(a['href'])
-            if '/tag/' in u.path:
+            if self.tag_scope and 'tag' in a.get('class','').split() and '/tag/' in u.path:
                 self.tags.add(urllib.parse.unquote(u.path.split('/tag/',1)[1]).strip('/').replace('-',' '))
-        if tag=='a' and 'tag' in a.get('class','').split(): self.tag_text=True
+        if self.tag_scope and tag=='a' and 'tag' in a.get('class','').split(): self.tag_text=True
         if tag=='meta': self.meta[a.get('property',a.get('name',''))]=a.get('content','')
         for k in ('data-tralbum','data-band','data-blob','data-client-items','data-items','data-props'):
             if a.get(k):
@@ -23,6 +27,8 @@ class Page(HTMLParser):
         if self.tag_text and data.strip(): self.tags.add(data.strip().casefold())
     def handle_endtag(self, tag):
         if tag=='a': self.tag_text=False
+        if tag=='div' and self.div_stack:
+            if self.div_stack.pop(): self.tag_scope-=1
 
 def get(url):
     time.sleep(2)
@@ -107,7 +113,7 @@ for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
             seen_ids[(kind,int(aid))]=records[-1]
         record=old if old else records[-1]
         tags=sorted({x.strip().casefold() for x in p.tags if x.strip()})
-        if tags:
+        if p.release_tags_seen:
             record['tags']=tags
             # Account-wide tags can appear on every release. Only explicit genre tags override curated genres.
             for genre in ('Ambient','Trance','Breakbeat','House','Techno','Dub','Electronica','Archive'):
@@ -115,7 +121,7 @@ for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
                     record['genre']=genre
                     break
         record['release_date']=c.get('release_date') or t.get('album_release_date') or record.get('release_date')
-        record['metadata_checked']=bool(tags)
+        record['metadata_checked']=p.release_tags_seen
         updated+=1; print('Imported:',url,aid,'tags:',tags)
     except Exception as e: print('Skipped:',url,e)
 if updated or normalized:
