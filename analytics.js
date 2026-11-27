@@ -99,9 +99,10 @@
     openPreferences();
   }, true);
   if (location.hash === '#analytics-preferences') openPreferences();
-  const footer = document.querySelector('.bu-footer') || document.querySelector('footer');
-  const information = footer && [...footer.querySelectorAll('h2,h3,h4')].find(h => h.textContent.trim() === 'Information');
-  (information?.parentElement || footer || document.body).append(settings);
+  if (!document.querySelector('footer [data-analytics-preferences]')) {
+    const information = [...document.querySelectorAll('footer h2,footer h3,footer h4')].find(h => h.textContent.trim() === 'Information');
+    if (information) information.parentElement.append(settings);
+  }
   document.body.append(dialog);
   if (!localStorage.getItem(preference)) {
     const openDialog = document.querySelector('dialog[open]');
