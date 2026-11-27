@@ -1268,5 +1268,21 @@
     "description": "21st Anniversary Producer Edition.",
     "release_date": "02 Nov 2025 00:00:00 GMT",
     "metadata_checked": false
+  },
+  {
+    "title": "Shhhh",
+    "artist": "Quietman",
+    "genre": "Trance",
+    "tags": [
+      "trance",
+      "ambient"
+    ],
+    "kind": "album",
+    "img": "https://f4.bcbits.com/img/a1017883510_10.jpg",
+    "url": "https://platipusmusic.bandcamp.com/album/shhhh",
+    "embed": null,
+    "description": "The original Quietman album, available through Platipus Music under licence. This edition contains 18 tracks.",
+    "release_date": "08 Jun 2022 00:00:00 GMT",
+    "metadata_checked": false
   }
 ]
