@@ -1,4 +1,6 @@
-import json, re, time, urllib.request, urllib.parse, html
+import json, re, time, urllib.request, urllib.parse, html, os
+FULL_REFRESH=os.environ.get('FULL_REFRESH','false').lower()=='true'
+DEADLINE=time.monotonic()+600
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -31,9 +33,10 @@ class Page(HTMLParser):
             if self.div_stack.pop(): self.tag_scope-=1
 
 def get(url):
-    time.sleep(2)
+    if time.monotonic()>DEADLINE: raise TimeoutError('Sync time budget reached')
+    time.sleep(1)
     req=urllib.request.Request(url,headers={'User-Agent':'BlackUnicornCatalogue/1.0 (label catalogue sync)'})
-    with urllib.request.urlopen(req,timeout=25) as r:
+    with urllib.request.urlopen(req,timeout=8) as r:
         if urllib.parse.urlparse(r.url).hostname not in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com'): raise ValueError('Unexpected redirect')
         p=Page(); p.feed(r.read(4000000).decode('utf-8','replace')); return p
 
@@ -84,7 +87,9 @@ for host in ('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendslover
 seen_ids={(r.get('kind','album'),int(r['embed'])):r for r in records if r.get('embed')}
 updated=0
 for url in sorted(urls,key=lambda u: ('larrylush.bandcamp.com' not in u,u)):
+    if time.monotonic()>DEADLINE: break
     old=known.get(url)
+    if old and old.get('embed') and not FULL_REFRESH: continue
     try:
         kind='track' if '/track/' in urllib.parse.urlparse(url).path else 'album'
         p=get(url); t=p.data.get('data-tralbum',{}); c=t.get('current') or {}
@@ -165,6 +170,8 @@ for host in hosts:
         merch_links(p.links,base,found); merch_links(p.data,base,found)
         print('Merch discovery:',host,len(found))
         for url in sorted(found):
+            if time.monotonic()>DEADLINE: break
+            if url in products and not FULL_REFRESH: continue
             try:
                 q=get(url)
                 title=q.meta.get('og:title','').strip()
