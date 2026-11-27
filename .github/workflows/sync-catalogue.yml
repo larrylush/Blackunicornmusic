@@ -1,11 +1,6 @@
-name: Sync Bandcamp catalogue
+name: Catalogue - New and unclassified
 on:
   workflow_dispatch:
-    inputs:
-      full_refresh:
-        description: Refresh all release tags (may overwrite curated tags)
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -25,7 +20,7 @@ jobs:
           python-version: '3.12'
       - run: python -u scripts/sync_catalogue.py
         env:
-          FULL_REFRESH: ${{ github.event_name == 'push' || inputs.full_refresh == true }}
+          FULL_REFRESH: 'false'
       - name: Commit catalogue changes
         run: |
           git config user.name "Black Unicorn Catalogue"
