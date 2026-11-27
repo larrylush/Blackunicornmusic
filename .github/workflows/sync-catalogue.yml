@@ -1,0 +1,27 @@
+name: Sync Bandcamp catalogue
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: catalogue-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/sync_catalogue.py
+      - name: Commit catalogue changes
+        run: |
+          git config user.name "Black Unicorn Catalogue"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalogue.json merch.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Sync Bandcamp catalogue"
+            git push
+          fi
