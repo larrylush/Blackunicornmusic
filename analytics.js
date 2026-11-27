@@ -54,13 +54,14 @@
     else if (link.hasAttribute('download') || /\.(zip|dmg|pkg|msi|vst3|component)$/i.test(target.pathname)) traffic('download_click');
   });
 
-  const settings = document.createElement('button');
-  settings.type = 'button';
-  settings.textContent = 'Analytics preferences';
+  const settings = document.createElement('a');
+  settings.href = '#analytics-preferences';
+  settings.textContent = 'Privacy & analytics preferences';
+  settings.setAttribute('data-analytics-preferences','');
   const dialog = document.createElement('dialog');
   dialog.setAttribute('aria-label', 'Analytics preferences');
   const copy = document.createElement('p');
-  copy.textContent = "Optional analytics help us understand visits, returning visitors, referral sources, general location and device information. A random browser identifier is stored for up to 90 days. It's entirely your choice, and you can change your choice anytime under Privacy & analytics preferences in the Explore menu.";
+  copy.textContent = "Optional analytics help us understand visits, returning visitors, referral sources, general location and device information. A random browser identifier is stored for up to 90 days. It's entirely your choice, and you can change your choice anytime under Privacy & analytics preferences in the Explore menu or under Information in the footer.";
   dialog.id = 'bu-analytics-dialog';
   const heading = document.createElement('h2');
   heading.textContent = 'Help us make Black Unicorn even better';
@@ -91,7 +92,6 @@
     dialog.append(button);
   }
   const openPreferences = () => { if (!dialog.open) dialog.showModal(); };
-  settings.addEventListener('click', openPreferences);
   document.addEventListener('click', event => {
     const link = event.target.closest?.('[data-analytics-preferences]');
     if (!link) return;
@@ -99,7 +99,9 @@
     openPreferences();
   }, true);
   if (location.hash === '#analytics-preferences') openPreferences();
-  (document.querySelector('footer') || document.body).append(settings);
+  const footer = document.querySelector('.bu-footer') || document.querySelector('footer');
+  const information = footer && [...footer.querySelectorAll('h2,h3,h4')].find(h => h.textContent.trim() === 'Information');
+  (information?.parentElement || footer || document.body).append(settings);
   document.body.append(dialog);
   if (!localStorage.getItem(preference)) {
     const openDialog = document.querySelector('dialog[open]');
