@@ -237,7 +237,7 @@
   {
     "title": "Laugh At The Sun",
     "artist": "Black Unicorn Recordings",
-    "genre": "Unclassified",
+    "genre": "Eclectic",
     "kind": "album",
     "img": "https://f4.bcbits.com/img/a2222337788_5.jpg",
     "url": "https://larrylush.bandcamp.com/album/laugh-at-the-sun",
@@ -245,7 +245,9 @@
     "description": "An eclectic collection of collaborations and solo work from the Lush studio archives.",
     "release_date": "23 Aug 2022 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": []
+    "tags": [
+      "eclectic"
+    ]
   },
   {
     "title": "Machine Dreams Promo",
