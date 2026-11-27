@@ -8,9 +8,6 @@ on:
         default: true
   push:
     branches: [nov26]
-    paths: ['scripts/sync_catalogue.py']
-  push:
-    branches: [nov26]
     paths:
       - scripts/sync_catalogue.py
       - .github/workflows/sync-catalogue.yml
@@ -25,10 +22,14 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: nov26
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -u scripts/sync_catalogue.py
+        env:
+          FULL_REFRESH: ${{ github.event_name == 'push' || inputs.full_refresh == true }}
       - name: Commit catalogue changes
         run: |
           git config user.name "Black Unicorn Catalogue"
@@ -36,5 +37,5 @@ jobs:
           git add catalogue.json merch.json
           if ! git diff --cached --quiet; then
             git commit -m "Sync Bandcamp catalogue"
-            git push origin HEAD:nov26 origin HEAD:nov26
+            git push origin HEAD:nov26
           fi
