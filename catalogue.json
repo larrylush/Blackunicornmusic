@@ -263,7 +263,7 @@
   {
     "title": "Mark Sinclair & Larry Lush Remixology Vol.1",
     "artist": "Larry Lush & Mark Sinclair",
-    "genre": "Unclassified",
+    "genre": "Trance",
     "kind": "album",
     "img": "https://f4.bcbits.com/img/a1432268790_5.jpg",
     "url": "https://larrylush.bandcamp.com/album/mark-sinclair-larry-lush-remixology-vol-1",
@@ -271,7 +271,9 @@
     "description": "",
     "release_date": "01 Jan 2015 00:00:00 GMT",
     "metadata_checked": true,
-    "tags": []
+    "tags": [
+      "trance"
+    ]
   },
   {
     "title": "Still Life - Double Album",
