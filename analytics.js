@@ -90,7 +90,15 @@
     });
     dialog.append(button);
   }
-  settings.addEventListener('click', () => dialog.showModal());
+  const openPreferences = () => { if (!dialog.open) dialog.showModal(); };
+  settings.addEventListener('click', openPreferences);
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('[data-analytics-preferences]');
+    if (!link) return;
+    event.preventDefault();
+    openPreferences();
+  }, true);
+  if (location.hash === '#analytics-preferences') openPreferences();
   (document.querySelector('footer') || document.body).append(settings);
   document.body.append(dialog);
   if (!localStorage.getItem(preference)) {
