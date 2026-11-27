@@ -1,11 +1,13 @@
 name: Sync Bandcamp catalogue
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * *'
 permissions:
   contents: write
 concurrency:
   group: catalogue-sync
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -17,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/sync_catalogue.py
+      - run: python -u scripts/sync_catalogue.py
       - name: Commit catalogue changes
         run: |
           git config user.name "Black Unicorn Catalogue"
@@ -25,5 +27,5 @@ jobs:
           git add catalogue.json merch.json
           if ! git diff --cached --quiet; then
             git commit -m "Sync Bandcamp catalogue"
-            git push
+            git push origin HEAD:nov26
           fi
