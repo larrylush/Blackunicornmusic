@@ -89,7 +89,6 @@
       <div class="bu-feature-controls" hidden>
         <button type="button" aria-controls="bu-feature-release-1" aria-pressed="true">Found Horizons</button>
         <button type="button" aria-controls="bu-feature-release-2" aria-pressed="false">The Deepest Cut</button>
-        <button type="button" data-feature-pause>Pause rotation</button>
       </div>
     </div>
     <article id="bu-feature-release-1" class="bu-feature-release">
@@ -161,17 +160,15 @@ Welcome back to the Quietman universe.</p></details>
   const covers = panels.map(panel => panel.querySelector('img'));
   const controls = section.querySelector('.bu-feature-controls');
   const selectors = [...controls.querySelectorAll('[aria-controls]')];
-  const pauseButton = controls.querySelector('[data-feature-pause]');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const releases = [{"title":"Found Horizons 2 - QUIETMAN • 30 YEARS DEEP IN THE ARCHIVES","artist":"Quietman","url":"https://quietmanmusic.bandcamp.com/album/found-horizons-2-quietman-30-years-deep-in-the-archives","img":"https://f4.bcbits.com/img/a2807768344_5.jpg","embed":132812575,"genre":"Archive","tags":[]},{"title":"The Deepest Cut (21st Anniversary Producer Edition)","artist":"New London School of Electronics","url":"https://newlondonschoolofelectronics.bandcamp.com/album/the-deepest-cut-21st-anniversary-producer-edition-new-london-school-of-electronics","img":"https://f4.bcbits.com/img/a4236162145_10.jpg","embed":null,"genre":"Ambient","tags":["ambient","electronica"]}];
   let current = 0;
-  let paused = reducedMotion.matches;
   let timer;
   let clearSlices = () => {};
 
   function schedule() {
     clearTimeout(timer);
-    if (paused || document.hidden || section.matches(':hover') ||
+    if (reducedMotion.matches || document.hidden || section.matches(':hover') ||
         section.contains(document.activeElement) || panels[current].querySelector('details').open) return;
     timer = setTimeout(() => show(1 - current), 12000);
   }
@@ -243,11 +240,6 @@ Welcome back to the Quietman universe.</p></details>
     }
   }
 
-  function updatePause() {
-    pauseButton.textContent = paused ? 'Play rotation' : 'Pause rotation';
-    schedule();
-  }
-
   covers.forEach(cover => {
     const hideBrokenCover = () => { cover.style.visibility = 'hidden'; };
     cover.addEventListener('error', hideBrokenCover);
@@ -262,26 +254,19 @@ Welcome back to the Quietman universe.</p></details>
     });
   });
   selectors.forEach((button, index) => button.addEventListener('click', () => show(index)));
-  pauseButton.addEventListener('click', () => {
-    paused = !paused;
-    updatePause();
-  });
   section.addEventListener('pointerenter', schedule);
   section.addEventListener('pointerleave', schedule);
   section.addEventListener('focusin', schedule);
   section.addEventListener('focusout', () => setTimeout(schedule, 0));
   document.addEventListener('visibilitychange', schedule);
   reducedMotion.addEventListener?.('change', event => {
-    if (event.matches) {
-      paused = true;
-      clearSlices();
-    }
-    updatePause();
+    if (event.matches) clearSlices();
+    schedule();
   });
 
   panels[1].hidden = true;
   controls.hidden = false;
-  updatePause();
+  schedule();
 })();
 </script><script src="black-friday-2026.js" defer></script>
   <script defer src="/Blackunicornmusic/analytics.js?v=5" data-endpoint="https://workerblack-unicorn-analytics.blackunirecords.workers.dev/events"></script>
