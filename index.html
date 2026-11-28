@@ -76,12 +76,13 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://larrylush.github.io/Blackunicornmusic/#website","url":"https://larrylush.github.io/Blackunicornmusic/","name":"Black Unicorn Records","alternateName":"Black Unicorn Music","publisher":{"@id":"https://larrylush.github.io/Blackunicornmusic/#organization"}},{"@type":"Organization","@id":"https://larrylush.github.io/Blackunicornmusic/#organization","name":"Black Unicorn Records","url":"https://larrylush.github.io/Blackunicornmusic/","sameAs":["https://larrylush.bandcamp.com/"]}]}</script>
 <link rel="icon" type="image/png" href="https://larrylush.github.io/Blackunicornmusic/assets/images/bua%252520trans%252520logo%252520only-657x576.png?v=3">
 <link rel="apple-touch-icon" href="https://larrylush.github.io/Blackunicornmusic/assets/images/bua%252520trans%252520logo%252520only-657x576.png?v=3">
+<noscript><style>.bu-art-layer:first-child{opacity:.72;animation:none;background-image:url("https://larrylush.github.io/Blackunicornmusic/assets/images/music20to20-1200x1200.webp")}</style></noscript>
 </head>
 <body><div id="bu-nav"><div class="bu-bar"><a class="bu-brand" href="index.html">BLACK UNICORN</a><div class="bu-links"><a href="catalogue.html">Music</a><a href="merch.html">Shop</a><a href="BlackUnicornAudio.html">Audio</a><a href="Profile.html">About</a></div><button type="button" id="bu-toggle" aria-expanded="false" aria-controls="bu-panel">Explore ☰</button></div><div id="bu-panel" hidden><div><h3>Music</h3><a href="index.html#article02-1k">Featured release</a><a href="catalogue.html">Full catalogue &amp; radio</a><a href="artists.html">Artists</a><a href="support.html">Become a supporter</a></div><div><h3>Shop</h3><a href="catalogue.html">Digital music</a><a href="merch.html">Merchandise</a></div><div><h3>Audio</h3><a href="BlackUnicornAudio.html">Black Unicorn Audio</a><a href="BlackUnicornAudio.html#features03-21">Unicorn Art Collection</a><a href="BlackUnicornAudio.html#features027-2f">Ear &amp; Gear Protection</a><a href="BlackUnicornAudio.html#features028-1v">PixelMorph</a></div><div><h3>Studio &amp; community</h3><a href="Profile.html">Profile</a><a href="BlackUnicornAudio.html#form01-22">Sign up / beta testing</a><a href="index.html#analytics-preferences" data-analytics-preferences="">Privacy &amp; analytics preferences</a></div></div></div>
   
   
 
-<section id="header18-w" class="bu-living"><div class="bu-art-stage" aria-hidden="true"><div class="bu-art-layer live" style="background-image:url('https://larrylush.github.io/Blackunicornmusic/assets/images/music20to20-1200x1200.webp')"></div><div class="bu-art-layer live" style="background-image:url('https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/breajks-700x700.webp')"></div><div class="bu-art-layer live" style="background-image:url('https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/better-700x700.webp')"></div></div><div class="bu-art-shade"></div><div class="bu-mast-copy"><div class="bu-mast-kicker">INDEPENDENT RECORD LABEL / ELECTRONIC ARTS</div><h1>BLACK<br>UNICORN<br><span>MUSIC</span></h1><p>Independent music. Without boundaries.</p><a href="catalogue.html">Explore the catalogue →</a></div></section>
+<section id="header18-w" class="bu-living"><div class="bu-art-stage" aria-hidden="true"><div class="bu-art-layer"></div><div class="bu-art-layer"></div><div class="bu-art-layer"></div></div><div class="bu-art-shade"></div><div class="bu-mast-copy"><div class="bu-mast-kicker">INDEPENDENT RECORD LABEL / ELECTRONIC ARTS</div><h1>BLACK<br>UNICORN<br><span>MUSIC</span></h1><p>Independent music. Without boundaries.</p><a href="catalogue.html">Explore the catalogue →</a></div></section>
 
 <section id="header13-2o" class="bu-intro"><div class="bu-intro-inner"><div class="bu-intro-heading"><span>BLACK UNICORN RECORDS</span><h2>Independent Music Without Boundaries</h2><p class="bu-intro-motto">Music without compromise.</p></div><div class="bu-intro-copy"><p>Black Unicorn Records is an independent record label founded by Larry Lush.</p><p>Born out of more than three decades of electronic music production, the label is a home for creative exploration, melodic electronic music, ambient soundscapes, progressive trance, experimental electronica and everything in between.</p><p>Alongside new material, Black Unicorn Records celebrates its musical heritage through carefully curated archive releases, remixes, previously unreleased recordings and limited-edition physical releases.</p><p>Our philosophy is simple: artistic freedom, creative independence and a direct connection between the artist and the listener.</p><p>Through our sister brand, Black Unicorn Audio, that same creative philosophy now extends into the development of original audio software, virtual instruments and experimental production tools.</p></div></div></section>
 
@@ -156,7 +157,95 @@ Welcome back to the Quietman universe.</p></details>
   
  
     
-  <script>(()=>{const b=document.getElementById('bu-toggle'),p=document.getElementById('bu-panel');if(!b||!p)return;function set(v){p.hidden=!v;b.setAttribute('aria-expanded',String(v))}b.addEventListener('click',()=>set(p.hidden));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!p.hidden){set(false);b.focus()}});p.addEventListener('click',e=>{if(e.target.closest('a'))set(false)})})();</script><script>(()=>{function el(t,v,c){const e=document.createElement(t);if(v)e.textContent=v;if(c)e.className=c;return e}function link(t,u,external=false){const a=el('a',t);a.href=u;if(external){a.target='_blank';a.rel='noopener'}return a}async function load(file,id,n,music){const grid=document.getElementById(id);try{const response=await fetch(file);if(!response.ok)throw Error();const data=await response.json();const list=music?[...data].sort((a,b)=>(Date.parse(b.release_date)||0)-(Date.parse(a.release_date)||0)):data;let offset=0;function makeCard(r){const card=el('article',null,'bu-preview-card'),img=el('img');img.src=r.thumb||(r.img||'').replace(/(https:\/\/[^/]+\.bcbits\.com\/img\/[ap]\d+)_\d+\.(jpg|png)$/,'$1_2.$2');img.onerror=()=>{img.onerror=null;img.src=r.img};img.loading='lazy';img.decoding='async';img.alt=r.title;const dest=music?'catalogue.html?search='+encodeURIComponent(r.title):'merch.html?search='+encodeURIComponent(r.title);const art=link('',dest);art.append(img);const actions=el('div',null,'bu-preview-actions');if(music){const listen=link('Listen',dest);for(const a of [art,listen])a.onclick=e=>{if(window.BUPlayer){e.preventDefault();e.stopPropagation();window.BUPlayer.play(r)}};actions.append(listen)}actions.append(!music&&r.sold?el('span','Sold'):link('Buy on '+(!music&&r.seller||'Bandcamp'),r.url,true));card.append(art,el('h3',r.title),el('small',music?r.artist:r.category),actions);return card}function render(){grid.replaceChildren(...Array.from({length:Math.min(n,list.length)},(_,i)=>makeCard(list[(offset+i)%list.length])))}render();if(list.length>n){const shell=el('div',null,'bu-carousel-shell bu-manual-carousel');grid.before(shell);const viewport=el('div',null,'bu-carousel-viewport bu-drag-viewport');shell.append(viewport);viewport.append(grid);grid.classList.add('bu-slide-track');grid.replaceChildren(...list.map(makeCard));viewport.tabIndex=0;viewport.setAttribute('aria-label',music?'Scroll music releases':'Scroll merchandise');function layout(){const visible=innerWidth<=600?2:innerWidth<=1000?3:n;const peek=innerWidth<=600?44:86;const inset=innerWidth<=600?12:24;grid.style.setProperty('--card-width',Math.max(70,(viewport.clientWidth-inset-peek-visible*16)/visible)+'px')}layout();new ResizeObserver(layout).observe(viewport);let drag=null,suppress=false;viewport.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;drag={x:e.clientX,left:viewport.scrollLeft,id:e.pointerId,moved:false};suppress=false});viewport.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const delta=e.clientX-drag.x;if(!drag.moved&&Math.abs(delta)<5)return;if(!drag.moved){drag.moved=true;viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging')}e.preventDefault();viewport.scrollLeft=drag.left-delta});function end(){if(!drag)return;suppress=drag.moved;drag=null;viewport.classList.remove('dragging');setTimeout(()=>suppress=false,0)}viewport.addEventListener('pointerup',end);viewport.addEventListener('pointercancel',end);viewport.addEventListener('lostpointercapture',end);viewport.addEventListener('click',e=>{if(suppress){e.preventDefault();e.stopImmediatePropagation()}},true);viewport.addEventListener('dragstart',e=>e.preventDefault());viewport.addEventListener('keydown',e=>{if(e.target!==viewport||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();viewport.scrollBy({left:(e.key==='ArrowRight'?1:-1)*viewport.clientWidth*.5,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})});}}catch(e){grid.append(link('Browse the full collection',music?'catalogue.html':'merch.html'))}}load('catalogue.json','features06-7-grid',6,true);load('merch.json','features03-15-grid',4,false)})();</script><footer class="bu-footer"><div class="bu-footer-brand"><a href="index.html"><img src="https://larrylush.github.io/Blackunicornmusic/assets/images/black-unicorn-logo-v2-trans-1.png" alt="Black Unicorn" width="100" height="100"></a><div><strong>BLACK UNICORN</strong><p>Independent music. Creative audio tools.</p></div></div><div class="bu-footer-grid"><div><h2>Music &amp; shop</h2><a href="catalogue.html">Music catalogue</a><a href="artists.html">Artists</a><a href="merch.html">Merchandise</a></div><div><h2>Black Unicorn Audio</h2><a href="BlackUnicornAudio.html">Plug-ins</a><a href="BlackUnicornAudio.html#form01-22">Beta testing</a><a href="contact.html">Support</a></div><div><h2>Information</h2><a href="Profile.html">About us</a><a href="contact.html">Contact</a><a href="sitemap.html">Sitemap</a><a href="index.html#analytics-preferences" data-analytics-preferences="">Privacy &amp; analytics preferences</a></div><div><h2>Legal</h2><a href="legal.html">Terms &amp; conditions</a><a href="legal.html#privacy">Privacy policy</a><a href="legal.html#cookies">Cookie policy</a><a href="BUATerms.html">Software licensing</a></div></div><div class="bu-footer-bottom">© 2026 Black Unicorn Records &amp; Audio · All rights reserved.</div></footer><script src="persistent-player.js?v=50"></script><script>(()=>{const hero=document.querySelector('.bu-living'),layers=[...hero.querySelectorAll('.bu-art-layer')];let paused=matchMedia('(prefers-reduced-motion: reduce)').matches,art=[],bag=[],slot=0;function state(){hero.classList.toggle('paused',paused);}state();function next(){if(!bag.length)bag=art.slice().sort(()=>Math.random()-.5);return bag.pop()}function preload(url){return new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(url);img.onerror=()=>resolve(null);img.src=url})}let pending=null;function queue(){pending=preload(next())}fetch('catalogue.json').then(r=>r.json()).then(records=>{art=[...new Set(records.map(r=>r.img).filter(u=>typeof u==='string'&&u.startsWith('https://')))];if(!art.length)return;queue();let busy=false;setInterval(async()=>{if(paused||document.hidden||busy)return;busy=true;try{const url=await pending;queue();if(!url||paused)return;const layer=layers[slot++%layers.length];layer.classList.remove('live');await new Promise(resolve=>setTimeout(resolve,4100));layer.style.backgroundImage='url('+JSON.stringify(url)+')';layer.classList.add('live')}finally{busy=false}},8500)}).catch(()=>{});})();</script><script>
+  <script>(()=>{const b=document.getElementById('bu-toggle'),p=document.getElementById('bu-panel');if(!b||!p)return;function set(v){p.hidden=!v;b.setAttribute('aria-expanded',String(v))}b.addEventListener('click',()=>set(p.hidden));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!p.hidden){set(false);b.focus()}});p.addEventListener('click',e=>{if(e.target.closest('a'))set(false)})})();</script><script>(()=>{function el(t,v,c){const e=document.createElement(t);if(v)e.textContent=v;if(c)e.className=c;return e}function link(t,u,external=false){const a=el('a',t);a.href=u;if(external){a.target='_blank';a.rel='noopener'}return a}async function load(file,id,n,music){const grid=document.getElementById(id);try{const response=await fetch(file);if(!response.ok)throw Error();const data=await response.json();const list=music?[...data].sort((a,b)=>(Date.parse(b.release_date)||0)-(Date.parse(a.release_date)||0)):data;let offset=0;function makeCard(r){const card=el('article',null,'bu-preview-card'),img=el('img');img.src=r.thumb||(r.img||'').replace(/(https:\/\/[^/]+\.bcbits\.com\/img\/[ap]\d+)_\d+\.(jpg|png)$/,'$1_2.$2');img.onerror=()=>{img.onerror=null;img.src=r.img};img.loading='lazy';img.decoding='async';img.alt=r.title;const dest=music?'catalogue.html?search='+encodeURIComponent(r.title):'merch.html?search='+encodeURIComponent(r.title);const art=link('',dest);art.append(img);const actions=el('div',null,'bu-preview-actions');if(music){const listen=link('Listen',dest);for(const a of [art,listen])a.onclick=e=>{if(window.BUPlayer){e.preventDefault();e.stopPropagation();window.BUPlayer.play(r)}};actions.append(listen)}actions.append(!music&&r.sold?el('span','Sold'):link('Buy on '+(!music&&r.seller||'Bandcamp'),r.url,true));card.append(art,el('h3',r.title),el('small',music?r.artist:r.category),actions);return card}function render(){grid.replaceChildren(...Array.from({length:Math.min(n,list.length)},(_,i)=>makeCard(list[(offset+i)%list.length])))}render();if(list.length>n){const shell=el('div',null,'bu-carousel-shell bu-manual-carousel');grid.before(shell);const viewport=el('div',null,'bu-carousel-viewport bu-drag-viewport');shell.append(viewport);viewport.append(grid);grid.classList.add('bu-slide-track');grid.replaceChildren(...list.map(makeCard));viewport.tabIndex=0;viewport.setAttribute('aria-label',music?'Scroll music releases':'Scroll merchandise');function layout(){const visible=innerWidth<=600?2:innerWidth<=1000?3:n;const peek=innerWidth<=600?44:86;const inset=innerWidth<=600?12:24;grid.style.setProperty('--card-width',Math.max(70,(viewport.clientWidth-inset-peek-visible*16)/visible)+'px')}layout();new ResizeObserver(layout).observe(viewport);let drag=null,suppress=false;viewport.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;drag={x:e.clientX,left:viewport.scrollLeft,id:e.pointerId,moved:false};suppress=false});viewport.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const delta=e.clientX-drag.x;if(!drag.moved&&Math.abs(delta)<5)return;if(!drag.moved){drag.moved=true;viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging')}e.preventDefault();viewport.scrollLeft=drag.left-delta});function end(){if(!drag)return;suppress=drag.moved;drag=null;viewport.classList.remove('dragging');setTimeout(()=>suppress=false,0)}viewport.addEventListener('pointerup',end);viewport.addEventListener('pointercancel',end);viewport.addEventListener('lostpointercapture',end);viewport.addEventListener('click',e=>{if(suppress){e.preventDefault();e.stopImmediatePropagation()}},true);viewport.addEventListener('dragstart',e=>e.preventDefault());viewport.addEventListener('keydown',e=>{if(e.target!==viewport||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();viewport.scrollBy({left:(e.key==='ArrowRight'?1:-1)*viewport.clientWidth*.5,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})});}}catch(e){grid.append(link('Browse the full collection',music?'catalogue.html':'merch.html'))}}load('catalogue.json','features06-7-grid',6,true);load('merch.json','features03-15-grid',4,false)})();</script><footer class="bu-footer"><div class="bu-footer-brand"><a href="index.html"><img src="https://larrylush.github.io/Blackunicornmusic/assets/images/black-unicorn-logo-v2-trans-1.png" alt="Black Unicorn" width="100" height="100"></a><div><strong>BLACK UNICORN</strong><p>Independent music. Creative audio tools.</p></div></div><div class="bu-footer-grid"><div><h2>Music &amp; shop</h2><a href="catalogue.html">Music catalogue</a><a href="artists.html">Artists</a><a href="merch.html">Merchandise</a></div><div><h2>Black Unicorn Audio</h2><a href="BlackUnicornAudio.html">Plug-ins</a><a href="BlackUnicornAudio.html#form01-22">Beta testing</a><a href="contact.html">Support</a></div><div><h2>Information</h2><a href="Profile.html">About us</a><a href="contact.html">Contact</a><a href="sitemap.html">Sitemap</a><a href="index.html#analytics-preferences" data-analytics-preferences="">Privacy &amp; analytics preferences</a></div><div><h2>Legal</h2><a href="legal.html">Terms &amp; conditions</a><a href="legal.html#privacy">Privacy policy</a><a href="legal.html#cookies">Cookie policy</a><a href="BUATerms.html">Software licensing</a></div></div><div class="bu-footer-bottom">© 2026 Black Unicorn Records &amp; Audio · All rights reserved.</div></footer><script src="persistent-player.js?v=50"></script><script>
+(async () => {
+  const hero = document.querySelector('.bu-living');
+  const layers = [...hero.querySelectorAll('.bu-art-layer')];
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const defaults = ["https://larrylush.github.io/Blackunicornmusic/assets/images/music20to20-1200x1200.webp","https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/breajks-700x700.webp","https://raw.githubusercontent.com/larrylush/Blackunicornmusic/nov26/assets/images/better-700x700.webp"];
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+  let pool = defaults;
+  let bag = [];
+  let slot = 0;
+  let busy = false;
+
+  function nextArtwork() {
+    if (!bag.length) {
+      bag = [...pool];
+      for (let i = bag.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [bag[i], bag[j]] = [bag[j], bag[i]];
+      }
+    }
+    return bag.pop();
+  }
+
+  async function preload(url) {
+    const img = new Image();
+    const loaded = new Promise(resolve => {
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+    });
+    img.src = url;
+    if (!await Promise.race([loaded, delay(4500).then(() => false)])) return null;
+    try {
+      if (img.decode) await img.decode();
+      return url;
+    } catch {
+      return null;
+    }
+  }
+
+  function display(layer, url) {
+    layer.style.backgroundImage = 'url(' + JSON.stringify(url) + ')';
+    layer.classList.add('live');
+  }
+
+  const catalogue = fetch('catalogue.json').then(response => {
+    if (!response.ok) return [];
+    return response.json();
+  }).then(records => [...new Set(records.map(record => record.img)
+    .filter(url => typeof url === 'string' && url.startsWith('https://')))])
+    .catch(() => []);
+  const firstPool = await Promise.race([catalogue, delay(450).then(() => [])]);
+  if (firstPool.length >= layers.length) pool = firstPool;
+
+  const starting = layers.map(() => preload(nextArtwork()));
+  await Promise.all(layers.map(async (layer, index) => {
+    const cycle = [64, 78, 92][index];
+    layer.style.animationDelay = (-Math.random() * cycle) + 's';
+    const url = await starting[index] || await preload(defaults[index]);
+    if (url) display(layer, url);
+  }));
+
+  catalogue.then(images => {
+    if (images.length >= layers.length && pool !== firstPool) {
+      pool = images;
+      bag = [];
+    }
+  });
+
+  let pending;
+  if (!motion.matches) pending = preload(nextArtwork());
+  setInterval(async () => {
+    if (motion.matches || document.hidden || busy) return;
+    busy = true;
+    try {
+      const url = await (pending || preload(nextArtwork()));
+      pending = preload(nextArtwork());
+      if (!url || motion.matches || document.hidden) return;
+      const layer = layers[slot++ % layers.length];
+      if (layer.classList.contains('live')) {
+        layer.classList.remove('live');
+        await delay(4100);
+      }
+      display(layer, url);
+    } finally {
+      busy = false;
+    }
+  }, 8500);
+})();
+</script><script>
 (() => {
   const section = document.querySelector('.bu-feature');
   const panels = [...section.querySelectorAll('.bu-feature-release')];
