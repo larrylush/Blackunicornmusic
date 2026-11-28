@@ -29,3 +29,18 @@
   .bu-artist-neon {position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
   .bu-artist-neon polygon {stroke:currentColor;stroke-width:1.2px;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 4px currentColor)}
 }
+
+/* Keep the Explore label free of a decorative button border or header rule. */
+#bu-nav, #bu-nav .bu-bar {
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
+#bu-nav #bu-toggle {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+#bu-nav #bu-toggle:focus-visible {
+  outline: 2px solid #e8bb77 !important;
+  outline-offset: 2px;
+}
