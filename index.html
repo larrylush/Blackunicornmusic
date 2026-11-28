@@ -311,7 +311,7 @@ Welcome back to the Quietman universe.</p></details>
     return 'hsl(' + ((sectorHue * 60 + 360) % 360) + ', 100%, 68%)';
   }
 
-  function revealSlices(outgoing, incoming, downward) {
+  function revealSlices(outgoing, incoming, inward) {
     if (reducedMotion.matches || !window.CSS?.supports('clip-path', 'polygon(0% 0%, 100% 0%, 0% 100%)') ||
         typeof Element.prototype.animate !== 'function' ||
         !outgoing.naturalWidth || !incoming.naturalWidth) return;
@@ -326,6 +326,8 @@ Welcome back to the Quietman universe.</p></details>
     const coverIndex = covers.indexOf(outgoing);
     const animations = [];
     const sectors = 16;
+    const startSector = Math.floor(Math.random() * sectors);
+    const spin = Math.random() < .5 ? -1 : 1;
     const rings = [0, .34, .67, 1];
     const pending = [];
     const point = (sector, radius) => {
@@ -355,15 +357,16 @@ Welcome back to the Quietman universe.</p></details>
         outline.setAttribute('points', points.map(pair => pair.join(',')).join(' '));
         outline.style.color = neonColour(coverIndex, points, sector, ring);
         outlines.append(outline);
-        const verticalCentre = points.reduce((sum, [, y]) => sum + y, 0) / points.length;
-        pending.push({ mask, oldArt, outline, verticalCentre });
+        const turn = ((sector - startSector) * spin + sectors) % sectors;
+        const spiralOrder = (rings.length - 2 - ring) * 13 + turn;
+        pending.push({ mask, oldArt, outline, spiralOrder });
       }
     }
 
-    pending.sort((a, b) => a.verticalCentre - b.verticalCentre);
-    if (!downward) pending.reverse();
-    const stagger = 21;
-    const duration = 760;
+    pending.sort((a, b) => a.spiralOrder - b.spiralOrder);
+    if (!inward) pending.reverse();
+    const stagger = 9;
+    const duration = 320;
     overlay.append(outlines);
     const cleanupTimer = setTimeout(() => clearSlices(), (pending.length - 1) * stagger + duration + 60);
     clearSlices = () => {
