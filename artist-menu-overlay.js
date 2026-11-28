@@ -1,7 +1,13 @@
 (() => {
   const panel = document.getElementById('bu-panel');
   const picker = panel?.querySelector('.bu-artist-picker');
-  if (!picker || !window.CSS?.supports('selector(:has(*))')) return;
+  if (!picker) return;
+  for (const link of picker.querySelectorAll('a[href*="#"]')) {
+    const url = new URL(link.href);
+    url.searchParams.set('artist', url.hash.slice(1));
+    link.href = url.href;
+  }
+  if (!window.CSS?.supports('selector(:has(*))')) return;
   const summary = picker.querySelector('summary');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const ns = 'http://www.w3.org/2000/svg';
