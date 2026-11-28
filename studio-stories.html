@@ -20,9 +20,7 @@
 <style>
 *{box-sizing:border-box}body{margin:0;background:#141414;color:#f5f1ea;font:17px/1.65 system-ui,sans-serif}
 a{color:#edc591}a:focus-visible{outline:2px solid #edc591;outline-offset:4px}
-header,main{max-width:1100px;margin:auto;padding:24px clamp(20px,5vw,60px)}
-header{display:flex;gap:18px;flex-wrap:wrap;border-bottom:1px solid #45413e}
-header a{font-size:.9rem}
+main{max-width:1100px;margin:auto;padding:24px clamp(20px,5vw,60px)}
 .kicker,.byline{color:#edc591}.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.76rem}
 h1{font-size:clamp(2.2rem,6.4vw,4.5rem);line-height:1.04;margin:.25em 0 .32em}
 h2{line-height:1.2;margin-top:1.75em}.intro{max-width:62ch;font-size:1.15rem}
@@ -38,9 +36,17 @@ figcaption,.sources{font-size:.88rem;color:#d0c9c2}li+li{margin-top:.38em}
 .story-index figure{margin-bottom:16px}
 .story-index img{aspect-ratio:1;object-fit:contain;object-position:left bottom}
 </style>
+<style>#bu-nav{position:sticky;top:0;z-index:9999;background:#111;color:#f5f2ed;font:15px system-ui,sans-serif;border-bottom:1px solid #333}#bu-nav *{box-sizing:border-box}#bu-nav a{color:inherit;text-decoration:none}#bu-nav a:hover{color:#e8bb77}#bu-nav .bu-bar{max-width:1440px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px clamp(18px,4vw,60px)}#bu-nav .bu-brand{font-weight:700;letter-spacing:.14em;font-size:14px}#bu-nav .bu-links{display:flex;gap:28px}#bu-toggle{background:transparent;color:inherit;border:1px solid #555;padding:8px 14px;border-radius:3px;cursor:pointer;font:inherit}#bu-panel{max-height:75vh;overflow:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:32px clamp(18px,5vw,80px);border-top:1px solid #333}#bu-panel[hidden]{display:none}#bu-panel h3{font:500 22px system-ui;margin:0 0 15px;color:#fff}#bu-panel a{display:block;padding:7px 0;color:#bbb;font-size:15px}@media(max-width:700px){#bu-nav .bu-links{display:none}#bu-panel{grid-template-columns:repeat(2,1fr);gap:20px}}</style>
+<style>#bu-panel[hidden]{display:none!important}#bu-toggle{outline:none;box-shadow:none;position:relative}#bu-toggle::before,#bu-toggle::after{content:none!important;display:none!important}#bu-toggle:focus-visible{outline:2px solid #e8bb77;outline-offset:3px}#bu-nav .bu-bar>select{display:none!important}</style>
+<style>#bu-nav .bu-bar{position:relative;overflow:hidden}#bu-nav #bu-toggle{appearance:none!important;-webkit-appearance:none!important;box-shadow:none!important;filter:none!important;outline:none!important;margin:0!important;transform:none!important}#bu-nav #bu-toggle:focus-visible{outline:2px solid #e8bb77!important;outline-offset:2px}#bu-nav .bu-bar> :not(.bu-brand):not(.bu-links):not(#bu-toggle){display:none!important}</style>
+<style>#bu-nav #bu-toggle{all:unset!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex-shrink:0!important;font:inherit!important;color:#eee!important;border:1px solid #555!important;border-radius:5px!important;padding:8px 14px!important;cursor:pointer!important;background:#111!important}#bu-nav #bu-toggle:focus-visible{border-color:#e8bb77!important;outline:none!important}#bu-nav #bu-toggle::before,#bu-nav #bu-toggle::after,#bu-nav .bu-bar::before,#bu-nav .bu-bar::after{content:none!important;display:none!important}#bu-nav .bu-bar{overflow:clip!important}</style>
+<style>#bu-panel .bu-artist-picker summary{color:#bbb;cursor:pointer;padding:7px 0;font-size:15px}#bu-panel .bu-artist-picker summary:hover,#bu-panel .bu-artist-picker summary:focus-visible{color:#fff}#bu-panel .bu-artist-picker>div{margin-left:7px;padding-left:12px;border-left:1px solid #555}</style>
+<style>html{scroll-padding-top:74px}</style>
+<link rel="stylesheet" href="artist-menu-overlay.css">
+<script defer src="artist-menu-overlay.js"></script>
 </head>
 <body>
-<header><a href="./">Black Unicorn Music</a><a href="artists.html?artist=larry-lush#larry-lush">Larry Lush</a></header>
+<div id="bu-nav"><div class="bu-bar"><a class="bu-brand" href="./">BLACK UNICORN</a><div class="bu-links"><a href="catalogue.html">Music</a><a href="merch.html">Shop</a><a href="BlackUnicornAudio.html">Audio</a><a href="Profile.html">About</a></div><button type="button" id="bu-toggle" aria-expanded="false" aria-controls="bu-panel">Explore ☰</button></div><div id="bu-panel" hidden><div><h3>Music</h3><a href="index.html#article02-1k">Featured release</a><a href="catalogue.html">Full catalogue &amp; radio</a><details class="bu-artist-picker"><summary>Artists</summary><div><a href="artists.html#quietman">Quietman</a><a href="artists.html#friends-lovers-and-family">Friends, Lovers &amp; Family</a><a href="artists.html#larry-lush">Larry Lush</a><a href="artists.html#new-london-school-of-electronics">New London School of Electronics</a><a href="artists.html#mark-sinclair">Mark Sinclair</a><a href="artists.html">All artists</a></div></details><a href="support.html">Become a supporter</a></div><div><h3>Shop</h3><a href="catalogue.html">Digital music</a><a href="merch.html">Merchandise</a></div><div><h3>Audio</h3><a href="BlackUnicornAudio.html">Black Unicorn Audio</a><a href="BlackUnicornAudio.html#features03-21">Unicorn Art Collection</a><a href="BlackUnicornAudio.html#features027-2f">Ear &amp; Gear Protection</a><a href="BlackUnicornAudio.html#features028-1v">PixelMorph</a></div><div><h3>Studio &amp; community</h3><a href="Profile.html">Profile</a><a href="studio-stories.html">Studio Stories</a><a href="BlackUnicornAudio.html#form01-22">Sign up / beta testing</a><a href="index.html#analytics-preferences" data-analytics-preferences="">Privacy &amp; analytics preferences</a></div></div></div>
 <main>
 <h1>Studio Stories</h1>
 <div class="story-index">
@@ -48,5 +54,6 @@ figcaption,.sources{font-size:.88rem;color:#d0c9c2}li+li{margin-top:.38em}
 <article id="autumn-leaves"><figure><a href="studio-story-autumn-leaves.html"><img src="https://makeshop-multi-images.akamaized.net/ddonline/itemimages/000000033406_pGoDa1l.jpg" alt="Coldcut’s Autumn Leaves 12-inch single sleeve" decoding="async"></a></figure><h2><a href="studio-story-autumn-leaves.html">Coldcut’s Autumn Leaves with Mixmaster Morris</a></h2><p>Larry Lush on making the Irresistible Force mix with Mixmaster Morris and the studio techniques that shaped his production.</p></article>
 </div>
 </main>
+<script>(()=>{const b=document.getElementById('bu-toggle'),p=document.getElementById('bu-panel');if(!b||!p)return;function set(v){p.hidden=!v;b.setAttribute('aria-expanded',String(v))}b.addEventListener('click',()=>set(p.hidden));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!p.hidden){set(false);b.focus()}});p.addEventListener('click',e=>{if(e.target.closest('a'))set(false)})})();</script>
 </body>
 </html>
