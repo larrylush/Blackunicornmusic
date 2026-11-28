@@ -3,6 +3,7 @@ FULL_REFRESH=os.environ.get('FULL_REFRESH','false').lower()=='true'
 DEADLINE=time.monotonic()+600
 from html.parser import HTMLParser
 from pathlib import Path
+from sync_wilfisms import scan_wilfisms
 
 class Page(HTMLParser):
     def __init__(self):
@@ -157,6 +158,17 @@ if len(unique)!=len(records):
 mp=Path('merch.json')
 merch=json.loads(mp.read_text())
 products={r['url'] if r.get('seller') else canonical(r['url']):r for r in merch}
+wilfisms = [record for record in merch if record.get('seller') == 'Wilfisms']
+try:
+    scanned_art = scan_wilfisms(wilfisms)
+except (OSError, ValueError) as error:
+    print('Wilfisms scan failed; keeping existing listings:', error)
+else:
+    for record in wilfisms:
+        if record['url'] not in scanned_art:
+            products.pop(record['url'], None)
+    products.update(scanned_art)
+    print('Wilfisms artworks:', len(scanned_art))
 hosts=('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com','newlondonschoolofelectronics.bandcamp.com')
 def merch_links(value,base,out):
     if isinstance(value,dict):
