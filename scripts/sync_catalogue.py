@@ -156,7 +156,7 @@ if len(unique)!=len(records):
 # Merchandise discovery across all label accounts, including physical album packages.
 mp=Path('merch.json')
 merch=json.loads(mp.read_text())
-products={canonical(r['url']):r for r in merch}
+products={r['url'] if r.get('seller') else canonical(r['url']):r for r in merch}
 hosts=('larrylush.bandcamp.com','quietmanmusic.bandcamp.com','friendsloversandfamily.bandcamp.com','newlondonschoolofelectronics.bandcamp.com')
 def merch_links(value,base,out):
     if isinstance(value,dict):
