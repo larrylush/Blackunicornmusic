@@ -1,0 +1,105 @@
+name: Check Studio Stories
+on:
+  push:
+    paths:
+      - 'studio-story-*.html'
+      - 'studio-stories.html'
+      - 'sitemap.xml'
+      - '.github/workflows/check-studio-stories.yml'
+  pull_request:
+    paths:
+      - 'studio-story-*.html'
+      - 'studio-stories.html'
+      - 'sitemap.xml'
+      - '.github/workflows/check-studio-stories.yml'
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate story metadata, index links and sitemap
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          
+          ROOT = "https://larrylush.github.io/Blackunicornmusic/"
+          INDEX = "studio-stories.html"
+          
+          
+          class Page(HTMLParser):
+              def __init__(self, path):
+                  super().__init__()
+                  self.title = ""
+                  self.in_title = False
+                  self.meta = {}
+                  self.canonicals = []
+                  self.links = set()
+                  self.feed(path.read_text(encoding="utf-8"))
+          
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "title":
+                      self.in_title = True
+                  if tag == "link" and attrs.get("rel") == "canonical":
+                      self.canonicals.append(attrs.get("href"))
+                  if tag == "meta":
+                      name = attrs.get("property") or attrs.get("name")
+                      self.meta[name] = attrs.get("content", "")
+                  if tag == "a":
+                      self.links.add(attrs.get("href"))
+          
+              def handle_endtag(self, tag):
+                  if tag == "title":
+                      self.in_title = False
+          
+              def handle_data(self, data):
+                  if self.in_title:
+                      self.title += data
+          
+          
+          sitemap = ET.parse("sitemap.xml")
+          locations = [node.text for node in sitemap.findall(".//{*}loc")]
+          index = Page(Path(INDEX))
+          paths = sorted(Path(".").glob("studio-story-*.html"))
+          errors = []
+          seen = {key: set() for key in ("title", "description", "og:title", "og:description")}
+          if not paths:
+              errors.append("No Studio Story pages found")
+          for path in [Path(INDEX), *paths]:
+              page = Page(path)
+              url = ROOT + path.name
+          
+              def require(condition, message):
+                  if not condition:
+                      errors.append(f"{path}: {message}")
+          
+              require(page.canonicals == [url], "expected one self-referencing canonical URL")
+              require(locations.count(url) == 1, "expected one sitemap entry")
+              require(page.meta.get("og:url") == url, "social URL must match the canonical URL")
+              require(bool(page.title.strip()), "missing page title")
+              for key in ("description", "og:type", "og:title", "og:description", "og:image",
+                          "og:image:alt", "twitter:card", "twitter:title", "twitter:description",
+                          "twitter:image", "twitter:image:alt"):
+                  require(bool(page.meta.get(key, "").strip()), f"missing {key}")
+              for key in ("og:image", "twitter:image"):
+                  require(page.meta.get(key, "").startswith("https://"), f"{key} must be an absolute HTTPS URL")
+              for key in ("robots", "googlebot"):
+                  directives = page.meta.get(key, "").lower().replace(",", " ").split()
+                  require(not {"noindex", "nosnippet", "none"}.intersection(directives),
+                          f"{key} blocks indexing or snippets")
+              if path.name != INDEX:
+                  require(path.name in index.links, "missing link from Studio Stories index")
+                  require(page.meta.get("og:type") == "article", "expected Open Graph article type")
+              for key, values in seen.items():
+                  value = page.title.strip() if key == "title" else page.meta.get(key, "").strip()
+                  require(not value or value not in values, f"duplicate {key}")
+                  values.add(value)
+          
+          if errors:
+              raise SystemExit("\n".join(errors))
+          print(f"Verified Studio Stories index and {len(paths)} story pages.")
+          PY
