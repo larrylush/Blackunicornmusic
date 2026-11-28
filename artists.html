@@ -121,4 +121,23 @@ fetch('catalogue.json')
   else window.addEventListener('resize', measure);
 })();
 </script>
+<script>
+(() => {
+  function syncArtist() {
+    const url = new URL(location.href);
+    const id = url.hash.slice(1) || url.searchParams.get('artist');
+    const profile = id && document.getElementById(id);
+    if (!profile?.classList.contains('artist-profile')) return;
+    const needsScroll = !url.hash;
+    url.searchParams.set('artist', id);
+    url.hash = id;
+    if (url.href !== location.href) history.replaceState(history.state, '', url);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    canonical.href = url.origin + url.pathname + '?artist=' + encodeURIComponent(id);
+    if (needsScroll) profile.scrollIntoView();
+  }
+  syncArtist();
+  window.addEventListener('hashchange', syncArtist);
+})();
+</script>
 </body></html>
