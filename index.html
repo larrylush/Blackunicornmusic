@@ -311,7 +311,7 @@ Welcome back to the Quietman universe.</p></details>
     return 'hsl(' + ((sectorHue * 60 + 360) % 360) + ', 100%, 68%)';
   }
 
-  function revealSlices(outgoing, incoming) {
+  function revealSlices(outgoing, incoming, downward) {
     if (reducedMotion.matches || !window.CSS?.supports('clip-path', 'polygon(0% 0%, 100% 0%, 0% 100%)') ||
         typeof Element.prototype.animate !== 'function' ||
         !outgoing.naturalWidth || !incoming.naturalWidth) return;
@@ -355,13 +355,17 @@ Welcome back to the Quietman universe.</p></details>
         outline.setAttribute('points', points.map(pair => pair.join(',')).join(' '));
         outline.style.color = neonColour(coverIndex, points, sector, ring);
         outlines.append(outline);
-        const delay = ((sector * 5) % sectors) * 48 + (2 - ring) * 135;
-        pending.push({ mask, oldArt, outline, delay });
+        const verticalCentre = points.reduce((sum, [, y]) => sum + y, 0) / points.length;
+        pending.push({ mask, oldArt, outline, verticalCentre });
       }
     }
 
+    pending.sort((a, b) => a.verticalCentre - b.verticalCentre);
+    if (!downward) pending.reverse();
+    const stagger = 21;
+    const duration = 760;
     overlay.append(outlines);
-    const cleanupTimer = setTimeout(() => clearSlices(), 1810);
+    const cleanupTimer = setTimeout(() => clearSlices(), (pending.length - 1) * stagger + duration + 60);
     clearSlices = () => {
       clearTimeout(cleanupTimer);
       overlay.remove();
@@ -371,8 +375,8 @@ Welcome back to the Quietman universe.</p></details>
     incoming.parentElement.append(overlay);
 
     try {
-      for (const { mask, oldArt, outline, delay } of pending) {
-        const timing = { delay, duration: 760, fill: 'both' };
+      for (const [index, { mask, oldArt, outline }] of pending.entries()) {
+        const timing = { delay: index * stagger, duration, fill: 'both' };
         animations.push(oldArt.animate([
           {opacity: 1}, {opacity: 0, offset: .27}, {opacity: 0}
         ], timing));
@@ -398,7 +402,7 @@ Welcome back to the Quietman universe.</p></details>
     panels[current].hidden = false;
     selectors.forEach((button, i) => button.setAttribute('aria-pressed', String(i === current)));
     try {
-      revealSlices(covers[previous], covers[current]);
+      revealSlices(covers[previous], covers[current], current > previous);
     } catch {
       // The destination panel is already visible if the effect is unavailable.
     } finally {
