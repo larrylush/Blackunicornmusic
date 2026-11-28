@@ -326,8 +326,6 @@ Welcome back to the Quietman universe.</p></details>
     const coverIndex = covers.indexOf(outgoing);
     const animations = [];
     const sectors = 16;
-    const startSector = Math.floor(Math.random() * sectors);
-    const spin = Math.random() < .5 ? -1 : 1;
     const rings = [0, .34, .67, 1];
     const pending = [];
     const point = (sector, radius) => {
@@ -357,14 +355,13 @@ Welcome back to the Quietman universe.</p></details>
         outline.setAttribute('points', points.map(pair => pair.join(',')).join(' '));
         outline.style.color = neonColour(coverIndex, points, sector, ring);
         outlines.append(outline);
-        const turn = ((sector - startSector) * spin + sectors) % sectors;
-        const spiralOrder = (rings.length - 2 - ring) * 13 + turn;
-        pending.push({ mask, oldArt, outline, spiralOrder });
+        const radialOrder = inward ? rings.length - 2 - ring : ring;
+        const order = radialOrder * .28 + Math.random();
+        pending.push({ mask, oldArt, outline, order });
       }
     }
 
-    pending.sort((a, b) => a.spiralOrder - b.spiralOrder);
-    if (!inward) pending.reverse();
+    pending.sort((a, b) => a.order - b.order);
     const stagger = 9;
     const duration = 320;
     overlay.append(outlines);
