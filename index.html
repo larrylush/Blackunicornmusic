@@ -47,8 +47,11 @@
 .bu-feature-controls[hidden],.bu-feature-release[hidden] {display:none!important}
 .bu-feature-art {position:relative;aspect-ratio:1;background:#202020;overflow:hidden;isolation:isolate}
 .bu-feature-art img {width:100%;height:100%;object-fit:cover;display:block}
-.bu-feature-shards,.bu-feature-shards span {position:absolute;inset:0;pointer-events:none}
-.bu-feature-shards span {background-position:center;background-size:cover}
+.bu-feature-shards,.bu-feature-shards span,.bu-feature-shards svg {position:absolute;inset:0;pointer-events:none}
+.bu-feature-slice {background:#000}
+.bu-feature-slice-art {background-position:center;background-size:cover}
+.bu-feature-shards svg {width:100%;height:100%}
+.bu-feature-shards polygon {fill:none;opacity:0;stroke:currentColor;stroke-width:1.4px;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 2px currentColor) drop-shadow(0 0 5px currentColor)}
 .bu-feature-copy h3 {font-size:clamp(26px,3.5vw,48px);line-height:1.1;color:#fff;margin:0 0 12px}
 .bu-feature-copy p {color:#ddd;line-height:1.65;white-space:pre-line}
 .bu-feature-copy .bu-feature-meta {color:#e8bb77}
@@ -173,6 +176,47 @@ Welcome back to the Quietman universe.</p></details>
     timer = setTimeout(() => show(1 - current), 12000);
   }
 
+  const coverPalettes = [
+    ['#ff7669', '#ffba62', '#e96bff', '#74c7ff'],
+    ['#59e7ff', '#738cff', '#b077ff', '#80ffe0']
+  ];
+  const colourMaps = covers.map(cover => {
+    const sample = new Image();
+    const map = { pixels: null };
+    sample.crossOrigin = 'anonymous';
+    sample.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = 32;
+      const ctx = canvas.getContext('2d');
+      try {
+        const size = Math.min(sample.naturalWidth, sample.naturalHeight);
+        ctx.drawImage(sample, (sample.naturalWidth - size) / 2,
+          (sample.naturalHeight - size) / 2, size, size, 0, 0, 32, 32);
+        map.pixels = ctx.getImageData(0, 0, 32, 32).data;
+      } catch {
+        // Some image hosts restrict colour sampling.
+      }
+    };
+    sample.src = cover.currentSrc || cover.src;
+    return map;
+  });
+
+  function neonColour(coverIndex, points, sector, ring) {
+    const pixels = colourMaps[coverIndex].pixels;
+    const palette = coverPalettes[coverIndex];
+    const fallback = palette[(Math.floor(sector / 2) + ring) % palette.length];
+    if (!pixels) return fallback;
+    const centre = points.reduce(([x, y], [px, py]) => [x + px / 4, y + py / 4], [0, 0]);
+    const [x, y] = centre.map(n => Math.min(31, Math.max(0, Math.floor(n * .32))));
+    const [red, green, blue] = pixels.subarray((y * 32 + x) * 4, (y * 32 + x) * 4 + 3);
+    const max = Math.max(red, green, blue);
+    const chroma = max - Math.min(red, green, blue);
+    if (chroma < 16) return fallback;
+    const sectorHue = max === red ? (green - blue) / chroma :
+      max === green ? 2 + (blue - red) / chroma : 4 + (red - green) / chroma;
+    return 'hsl(' + ((sectorHue * 60 + 360) % 360) + ', 100%, 68%)';
+  }
+
   function revealSlices(outgoing, incoming) {
     if (reducedMotion.matches || !window.CSS?.supports('clip-path', 'polygon(0% 0%, 100% 0%, 0% 100%)') ||
         typeof Element.prototype.animate !== 'function' ||
@@ -181,46 +225,74 @@ Welcome back to the Quietman universe.</p></details>
     const overlay = document.createElement('div');
     overlay.className = 'bu-feature-shards';
     overlay.setAttribute('aria-hidden', 'true');
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const outlines = document.createElementNS(svgNS, 'svg');
+    outlines.setAttribute('viewBox', '0 0 100 100');
     const background = 'url(' + JSON.stringify(outgoing.currentSrc || outgoing.src) + ')';
+    const coverIndex = covers.indexOf(outgoing);
     const animations = [];
     const sectors = 16;
     const rings = [0, .34, .67, 1];
+    const pending = [];
     const point = (sector, radius) => {
       const angle = sector * 2 * Math.PI / sectors;
       const x = Math.cos(angle);
       const y = Math.sin(angle);
       const scale = 50 * radius / Math.max(Math.abs(x), Math.abs(y));
-      return (50 + x * scale) + '% ' + (50 + y * scale) + '%';
+      return [50 + x * scale, 50 + y * scale];
     };
 
     for (let ring = 0; ring < rings.length - 1; ring++) {
       for (let sector = 0; sector < sectors; sector++) {
-        const slice = document.createElement('span');
-        const inner = rings[ring];
-        const outer = rings[ring + 1];
-        slice.style.backgroundImage = background;
-        slice.style.clipPath = 'polygon(' + [
-          point(sector, inner), point(sector, outer),
-          point(sector + 1, outer), point(sector + 1, inner)
-        ].join(', ') + ')';
-        overlay.append(slice);
-        const delay = ((sector * 5) % sectors) * 53 + (2 - ring) * 180;
-        animations.push(slice.animate([
-          {opacity: 1, filter: 'brightness(1)'},
-          {opacity: .86, filter: 'brightness(1.23)', offset: .32},
-          {opacity: 0, filter: 'brightness(1.05)'}
-        ], {delay, duration: 470, fill: 'both', easing: 'ease-in-out'}));
+        const points = [
+          point(sector, rings[ring]), point(sector, rings[ring + 1]),
+          point(sector + 1, rings[ring + 1]), point(sector + 1, rings[ring])
+        ];
+        const mask = document.createElement('span');
+        mask.className = 'bu-feature-slice';
+        mask.style.clipPath = 'polygon(' + points.map(([x, y]) => x + '% ' + y + '%').join(', ') + ')';
+        const oldArt = document.createElement('span');
+        oldArt.className = 'bu-feature-slice-art';
+        oldArt.style.backgroundImage = background;
+        mask.append(oldArt);
+        overlay.append(mask);
+
+        const outline = document.createElementNS(svgNS, 'polygon');
+        outline.setAttribute('points', points.map(pair => pair.join(',')).join(' '));
+        outline.style.color = neonColour(coverIndex, points, sector, ring);
+        outlines.append(outline);
+        const delay = ((sector * 5) % sectors) * 48 + (2 - ring) * 135;
+        pending.push({ mask, oldArt, outline, delay });
       }
     }
 
-    incoming.parentElement.append(overlay);
-    const cleanupTimer = setTimeout(() => clearSlices(), 1680);
+    overlay.append(outlines);
+    const cleanupTimer = setTimeout(() => clearSlices(), 1810);
     clearSlices = () => {
       clearTimeout(cleanupTimer);
       overlay.remove();
       animations.forEach(animation => animation.cancel());
       clearSlices = () => {};
     };
+    incoming.parentElement.append(overlay);
+
+    try {
+      for (const { mask, oldArt, outline, delay } of pending) {
+        const timing = { delay, duration: 760, fill: 'both' };
+        animations.push(oldArt.animate([
+          {opacity: 1}, {opacity: 0, offset: .27}, {opacity: 0}
+        ], timing));
+        animations.push(mask.animate([
+          {opacity: 1}, {opacity: 1, offset: .66}, {opacity: 0}
+        ], timing));
+        animations.push(outline.animate([
+          {opacity: 0}, {opacity: 0, offset: .08}, {opacity: 1, offset: .33},
+          {opacity: .88, offset: .59}, {opacity: 0, offset: .94}, {opacity: 0}
+        ], timing));
+      }
+    } catch {
+      clearSlices();
+    }
   }
 
   function show(index) {
